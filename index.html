@@ -118,6 +118,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            margin-bottom: 3rem;
         }
 
         .info-card {
@@ -137,6 +138,10 @@
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-bottom: 1rem;
+        }
+
+        .info-card .btn {
+            margin-top: 1rem;
         }
 
         .btn {
@@ -321,12 +326,12 @@
             .hero {
                 grid-template-columns: 1fr;
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             main {
                 padding: 1rem;
             }
@@ -353,10 +358,10 @@
                 <li><button onclick="showPage('home')" class="nav-btn active">Home</button></li>
                 <li><button onclick="showPage('gallery')" class="nav-btn">Gallery</button></li>
                 <li><button onclick="showPage('diet')" class="nav-btn">Diet</button></li>
-                <li><button onclick="showPage('reproduction')" class="nav-btn">Reproduction</button></li>
+                <li><button onclick="showPage('reproduction')" class="nav-btn">Babies</button></li>
                 <li><button onclick="showPage('habitat')" class="nav-btn">Habitat</button></li>
-                <li><button onclick="showPage('classification')" class="nav-btn">Classification</button></li>
-                <li><button onclick="showPage('anatomy')" class="nav-btn">Anatomy</button></li>
+                <li><button onclick="showPage('classification')" class="nav-btn">Science Name</button></li>
+                <li><button onclick="showPage('anatomy')" class="nav-btn">Body</button></li>
                 <li><button onclick="showPage('behavior')" class="nav-btn">Behavior</button></li>
             </ul>
         </nav>
@@ -367,8 +372,8 @@
         <div id="home" class="page active">
             <section class="hero">
                 <div class="hero-content">
-                    <h2>Welcome to the World of the Australian Brushtail Possum</h2>
-                    <p>Discover one of Australia's most iconic marsupials - a fascinating nocturnal creature that has successfully adapted to both wild and urban environments.</p>
+                    <h2>Meet the Australian Brushtail Possum!</h2>
+                    <p>This fluffy, big-eyed animal lives in Australia. It comes out at night to look for food. Possums are great climbers and can live in forests AND in cities!</p>
                 </div>
                 <div class="hero-image">
                     <svg width="300" height="300" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -381,7 +386,7 @@
                         <circle cx="200" cy="155" r="8" fill="#2C1810"/>
                         <ellipse cx="160" cy="280" rx="20" ry="50" fill="#8B7355" stroke="#654321" stroke-width="2"/>
                         <ellipse cx="240" cy="280" rx="20" ry="50" fill="#8B7355" stroke="#654321" stroke-width="2"/>
-                        <path d="M 200 290 Q 180 340, 160 370 Q 140 380, 130 360 Q 150 350, 165 365 Q 180 355, 200 290" 
+                        <path d="M 200 290 Q 180 340, 160 370 Q 140 380, 130 360 Q 150 350, 165 365 Q 180 355, 200 290"
                               fill="#6B5345" stroke="#654321" stroke-width="2"/>
                     </svg>
                 </div>
@@ -389,68 +394,68 @@
 
             <div class="info-grid">
                 <div class="info-card">
-                    <h3>🌿 Natural Habitat</h3>
-                    <p>Explore where these adaptable creatures live, from eucalyptus forests to city rooftops.</p>
+                    <h3>🌿 Where They Live</h3>
+                    <p>Possums live in trees, forests, and even in people's rooftops! Find out where they call home.</p>
                     <button class="btn" onclick="showPage('habitat')">Learn More</button>
                 </div>
                 <div class="info-card">
-                    <h3>🍃 Diet & Feeding</h3>
-                    <p>Discover what brushtail possums eat and their important role in the ecosystem.</p>
+                    <h3>🍃 What They Eat</h3>
+                    <p>Possums munch on leaves, fruit, and flowers! Learn all about their favorite foods.</p>
                     <button class="btn" onclick="showPage('diet')">Learn More</button>
                 </div>
                 <div class="info-card">
-                    <h3>👶 Reproduction</h3>
-                    <p>Learn about possum joeys and the fascinating marsupial reproductive cycle.</p>
+                    <h3>👶 Baby Possums!</h3>
+                    <p>Baby possums are called joeys. They grow in their mom's pouch. Learn how!</p>
                     <button class="btn" onclick="showPage('reproduction')">Learn More</button>
                 </div>
                 <div class="info-card">
-                    <h3>🦘 Behavior</h3>
-                    <p>Understand their nocturnal habits, communication methods, and survival strategies.</p>
+                    <h3>🦘 What They Do</h3>
+                    <p>Possums sleep all day and come out at night. Find out what they do after dark!</p>
                     <button class="btn" onclick="showPage('behavior')">Learn More</button>
                 </div>
             </div>
 
             <section class="quick-facts">
-                <h2>Quick Facts</h2>
+                <h2>Fun Facts!</h2>
                 <ul>
-                    <li><strong>Scientific Name:</strong> <em>Trichosurus vulpecula</em></li>
-                    <li><strong>Size:</strong> 35-55 cm body length, plus 25-40 cm tail</li>
-                    <li><strong>Weight:</strong> 1.5-4.5 kg</li>
-                    <li><strong>Lifespan:</strong> 6-13 years in the wild</li>
-                    <li><strong>Conservation Status:</strong> Least Concern in Australia</li>
-                    <li><strong>Unique Feature:</strong> Bushy, prehensile tail that aids in climbing</li>
+                    <li><strong>Science Name:</strong> <em>Trichosurus vulpecula</em> — that means "hairy-tailed little fox"!</li>
+                    <li><strong>Size:</strong> About as long as your arm (35–55 cm), plus a long fluffy tail</li>
+                    <li><strong>Weight:</strong> About as heavy as a big bag of apples (1.5–4.5 kg)</li>
+                    <li><strong>How Long They Live:</strong> 6 to 13 years in the wild</li>
+                    <li><strong>Are They in Danger?</strong> No — there are lots of them in Australia!</li>
+                    <li><strong>Coolest Feature:</strong> Their bushy tail can grab branches like a hand!</li>
                 </ul>
             </section>
         </div>
 
         <!-- GALLERY INDEX PAGE -->
-        <!-- 
+        <!--
         ========================================
         TO ADD YOUR OWN PHOTOS:
         ========================================
         1. Save your 6 possum photos in an "images" folder next to this HTML file
         2. Name them: possum1.jpg, possum2.jpg, possum3.jpg, possum4.jpg, possum5.jpg, possum6.jpg
         3. The images will automatically display!
-        
+
         OR use online URLs:
         Replace "images/possum1.jpg" with full URLs like "https://example.com/my-possum-photo.jpg"
         -->
         <div id="gallery" class="page">
             <div class="content-section">
-                <h2>Image Gallery</h2>
-                <p>Explore our collection of Australian brushtail possum images showcasing these remarkable marsupials in various settings and activities. Click on any image to view it on its own page.</p>
+                <h2>Photo Gallery</h2>
+                <p>Check out these amazing possum photos! You'll see them in trees, eating, riding on their moms, and more. Click any photo to see it up close!</p>
             </div>
 
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="showPage('gallery-1')" style="cursor: pointer;">
                     <div class="gallery-item-image">
                         <!-- REPLACE: images/possum1.jpg with your photo -->
-                        <img src="images/possum1.jpg" alt="Possum in Tree Hollow" style="width: 100%; height: 100%; object-fit: cover;" 
+                        <img src="images/possum1.jpg" alt="Possum in Tree Hollow" style="width: 100%; height: 100%; object-fit: cover;"
                              onerror="this.src='https://via.placeholder.com/400x300/8B7355/FFFFFF?text=Photo+1:+Tree+Hollow'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>Possum in Tree Hollow</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>Possum in a Tree Hollow</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
 
@@ -461,8 +466,8 @@
                              onerror="this.src='https://via.placeholder.com/400x300/2C5F2D/FFFFFF?text=Photo+2:+Feeding'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>Nocturnal Feeding</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>Eating at Night</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
 
@@ -473,8 +478,8 @@
                              onerror="this.src='https://via.placeholder.com/400x300/A0826D/FFFFFF?text=Photo+3:+Mother+Joey'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>Mother with Joey</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>Mom and Her Baby</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
 
@@ -485,8 +490,8 @@
                              onerror="this.src='https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Photo+4:+Urban'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>Urban Adaptation</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>Possum in the City</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
 
@@ -497,8 +502,8 @@
                              onerror="this.src='https://via.placeholder.com/400x300/6B5345/FFFFFF?text=Photo+5:+Tail'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>The Famous Bushy Tail</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>That Amazing Fluffy Tail!</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
 
@@ -509,16 +514,15 @@
                              onerror="this.src='https://via.placeholder.com/400x300/97BC62/FFFFFF?text=Photo+6:+Grooming'">
                     </div>
                     <div class="gallery-item-content">
-                        <h3>Grooming Behavior</h3>
-                        <p>Click to view full image and details →</p>
+                        <h3>Getting Clean</h3>
+                        <p>Click to see the full photo and learn more →</p>
                     </div>
                 </div>
             </div>
 
             <div class="info-box" style="margin-top: 3rem; text-align: center;">
-                <h4>📷 Share Your Possum Photos!</h4>
-                <p>Have you encountered an Australian brushtail possum? We'd love to see your photographs! Please <a href="mailto:bushtail_possum@pm.me">Email Us</a> through our website to submit your images for consideration in our gallery.</p>
-
+                <h4>📷 Did You See a Possum?</h4>
+                <p>Did you spot an Australian brushtail possum? We would love to see your photo! <a href="mailto:bushtail_possum@pm.me">Email us</a> and we might put it in the gallery!</p>
             </div>
         </div>
 
@@ -526,156 +530,157 @@
         <div id="gallery-1" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>Possum in Tree Hollow</h2>
+                <h2>Possum in a Tree Hollow</h2>
                 <div style="background: #f0f0f0; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum1.jpg with your photo -->
-                    <img src="images/possum1.jpg" alt="Possum in Tree Hollow" 
+                    <img src="images/possum1.jpg" alt="Possum in Tree Hollow"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/8B7355/FFFFFF?text=Photo+1:+Possum+in+Tree+Hollow'">
                 </div>
-                <h3>Description</h3>
-                <p>A brushtail possum peering out from its favorite eucalyptus tree den. These tree hollows provide essential shelter and are the preferred nesting sites for wild possums. Note the distinctive pointed ears and bright, curious eyes characteristic of the species.</p>
-                <p>Tree hollows are critical habitat features for brushtail possums. These natural cavities, which take 100-200 years to form in old-growth eucalyptus trees, offer protection from weather and predators. A single possum may maintain 2-5 different den sites within its territory and rotate between them every few days.</p>
+                <h3>What's Happening?</h3>
+                <p>This possum is peeking out of its home inside a tree! Possums love to sleep inside holes in big old trees. These holes are called tree hollows.</p>
+                <p>A possum may have 2 to 5 different tree homes and swap between them. Big old trees can take 100 to 200 years to grow holes big enough for a possum. That makes these trees very special!</p>
             </div>
         </div>
 
         <div id="gallery-2" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>Nocturnal Feeding</h2>
+                <h2>Eating at Night</h2>
                 <div style="background: #1a1a2e; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum2.jpg with your photo -->
-                    <img src="images/possum2.jpg" alt="Nocturnal Feeding" 
+                    <img src="images/possum2.jpg" alt="Nocturnal Feeding"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/2C5F2D/FFFFFF?text=Photo+2:+Nocturnal+Feeding'">
                 </div>
-                <h3>Description</h3>
-                <p>Captured during nighttime foraging, this image shows a brushtail possum eating eucalyptus leaves. Their specialized digestive system allows them to process the toxic compounds found in eucalyptus foliage. The photo highlights their dexterous front paws used for grasping food.</p>
-                <p>Brushtail possums are primarily nocturnal feeders, emerging shortly after sunset to forage. They spend 4-6 hours each night feeding, consuming approximately 200-300 grams of vegetation. Their enlarged cecum contains beneficial bacteria that help break down cellulose and neutralize the toxins in eucalyptus leaves.</p>
+                <h3>What's Happening?</h3>
+                <p>This possum is eating eucalyptus leaves at night. Eucalyptus leaves are poisonous to most animals — but not possums! Possums have a special tummy that makes the poison harmless.</p>
+                <p>Possums come out after the sun goes down to find food. They spend about 4 to 6 hours eating each night — that's like eating from after-school snack time all the way past your bedtime! Their little hands are great at holding onto leaves while they munch!</p>
             </div>
         </div>
 
         <div id="gallery-3" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>Mother with Joey</h2>
+                <h2>Mom and Her Baby</h2>
                 <div style="background: #87CEEB; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum3.jpg with your photo -->
-                    <img src="images/possum3.jpg" alt="Mother with Joey" 
+                    <img src="images/possum3.jpg" alt="Mother with Joey"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/A0826D/FFFFFF?text=Photo+3:+Mother+with+Joey'">
                 </div>
-                <h3>Description</h3>
-                <p>A touching moment showing a mother possum with her joey clinging to her back. Young possums spend several months with their mothers after leaving the pouch, learning essential survival skills. This bond is crucial for the joey's development and eventual independence.</p>
-                <p>After spending 4.5-5 months developing in the mother's pouch, joeys begin the "back-riding" phase. During this time (6-9 months of age), the joey clings to its mother's back during nightly foraging trips, learning territory boundaries, food selection, and predator avoidance. This extended parental care is essential for the joey's survival when it becomes independent.</p>
+                <h3>What's Happening?</h3>
+                <p>A baby possum (called a joey) is riding on its mom's back! After spending months in mom's pouch, the joey rides on her back while she looks for food.</p>
+                <p>This is how joeys learn everything they need to know. They watch where mom goes, what she eats, and how she stays safe. It's like going to school on your mom's back!</p>
             </div>
         </div>
 
         <div id="gallery-4" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>Urban Adaptation</h2>
+                <h2>Possum in the City</h2>
                 <div style="background: linear-gradient(to bottom, #FF6B35, #1a1a2e); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum4.jpg with your photo -->
-                    <img src="images/possum4.jpg" alt="Urban Adaptation" 
+                    <img src="images/possum4.jpg" alt="Urban Adaptation"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/FF6B35/FFFFFF?text=Photo+4:+Urban+Adaptation'">
                 </div>
-                <h3>Description</h3>
-                <p>A brushtail possum navigating a residential rooftop at dusk. This image illustrates the species' remarkable ability to thrive in urban environments. Their adaptability has made them common visitors to Australian suburbs, where they've learned to coexist with human populations.</p>
-                <p>Urban brushtail possums demonstrate remarkable behavioral flexibility. They've learned to navigate power lines, use building structures as den sites, access ornamental plants for food, and time their movements to avoid traffic and domestic pets. Urban populations often have higher survival rates due to reduced predation pressure and consistent food sources, though they face unique risks from vehicles and human-wildlife conflict.</p>
+                <h3>What's Happening?</h3>
+                <p>This possum is walking across a rooftop in a city! Possums are very clever. They have learned to live in towns and cities, not just forests.</p>
+                <p>City possums walk along power lines, sleep in roof spaces, and eat garden plants. They are great at figuring out how to live around people!</p>
             </div>
         </div>
 
         <div id="gallery-5" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>The Famous Bushy Tail</h2>
+                <h2>That Amazing Fluffy Tail!</h2>
                 <div style="background: #f5f5dc; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum5.jpg with your photo -->
-                    <img src="images/possum5.jpg" alt="The Famous Bushy Tail" 
+                    <img src="images/possum5.jpg" alt="The Famous Bushy Tail"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/6B5345/FFFFFF?text=Photo+5:+Bushy+Tail'">
                 </div>
-                <h3>Description</h3>
-                <p>Close-up detail of the brushtail possum's distinctive bushy, prehensile tail. This remarkable appendage serves multiple functions: balance during climbing, gripping branches, and even as a signal during social interactions. The tail's thick fur helps distinguish this species from other possum varieties.</p>
-                <p>The brushtail possum's tail is truly remarkable, measuring 25-40 cm in length (nearly as long as the body). The tail is prehensile, meaning it can grasp and hold onto branches like a fifth limb. The underside of the tail tip has a naked, rough patch that provides enhanced grip. The bushy appearance comes from thick fur, especially at the base, which also serves as a fat storage site and helps with thermoregulation.</p>
+                <h3>What's Happening?</h3>
+                <p>Get a close look at the possum's big, bushy tail! The tail is almost as long as the possum's whole body. It can wrap around branches to hold on — like an extra hand!</p>
+                <p>The bottom tip of the tail has a rough patch of skin, almost like the grip on a shoe, so it doesn't slip. The tail is also fluffy and thick, which helps keep the possum warm.</p>
             </div>
         </div>
 
         <div id="gallery-6" class="page">
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
-                <h2>Grooming Behavior</h2>
+                <h2>Getting Clean</h2>
                 <div style="background: #2C5F2D; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum6.jpg with your photo -->
-                    <img src="images/possum6.jpg" alt="Grooming Behavior" 
+                    <img src="images/possum6.jpg" alt="Grooming Behavior"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
                          onerror="this.src='https://via.placeholder.com/800x600/97BC62/FFFFFF?text=Photo+6:+Grooming+Behavior'">
                 </div>
-                <h3>Description</h3>
-                <p>A possum engaged in self-grooming, an essential daily activity. Brushtail possums are fastidious about cleanliness, spending considerable time maintaining their fur. This behavior helps remove parasites and keeps their coat in optimal condition for insulation and water resistance.</p>
-                <p>Grooming is a critical behavior for brushtail possums. They spend significant time each day using their teeth and claws to clean their fur, remove debris, and eliminate parasites. Upon returning to their den after nightly foraging, possums engage in thorough self-grooming sessions, paying special attention to their face, ears, and paws. Mothers also groom their joeys, strengthening the maternal bond while keeping the young possum clean.</p>
+                <h3>What's Happening?</h3>
+                <p>This possum is cleaning itself! Possums spend a lot of time every day washing their fur with their paws and teeth. It keeps them clean and gets rid of bugs.</p>
+                <p>Moms also clean their babies to help them stay healthy and to show love. When a possum gets home from a night of eating, it usually takes a good long bath before going to sleep!</p>
             </div>
         </div>
 
         <!-- DIET PAGE -->
         <div id="diet" class="page">
             <div class="content-section">
-                <h2>Dietary Habits of the Brushtail Possum</h2>
-                
-                <p>The Australian brushtail possum is primarily <strong>herbivorous</strong>, with a diverse diet that varies depending on habitat, season, and availability of food sources.</p>
+                <h2>What Do Possums Eat?</h2>
 
-                <h3>Primary Food Sources</h3>
-                
+                <p>Possums are <strong>plant eaters!</strong> They munch on lots of different plants. What they eat can change depending on where they live and what time of year it is.</p>
+
+                <h3>Favorite Foods</h3>
+
                 <h4>🌿 Eucalyptus Leaves</h4>
-                <p>The foundation of the brushtail possum's diet consists of eucalyptus leaves. These leaves contain toxic compounds that would be harmful to most animals, but possums have evolved specialized digestive systems to break down these toxins.</p>
+                <p>Possums eat lots of eucalyptus leaves. These leaves are actually poisonous to most animals! But possums have a special tummy that makes them safe to eat. How cool is that?</p>
 
-                <h4>🍃 Native Australian Plants</h4>
-                <p>In addition to eucalyptus, brushtail possums consume:</p>
+                <h4>🍃 Other Australian Plants</h4>
+                <p>Possums also like to eat:</p>
                 <ul>
                     <li>Acacia leaves and flowers</li>
-                    <li>Native fruits and berries</li>
+                    <li>Wild fruits and berries</li>
                     <li>Blossoms and flowers</li>
-                    <li>Bark and tree sap</li>
-                    <li>Seed pods and native grasses</li>
+                    <li>Tree bark and sap</li>
+                    <li>Seeds and grasses</li>
                 </ul>
 
-                <h4>🏙️ Urban Food Sources</h4>
+                <h4>🏙️ City Foods</h4>
+                <p>Possums living in cities eat garden plants too, like:</p>
                 <ul>
-                    <li>Garden vegetables (especially roses, fruit trees)</li>
-                    <li>Ornamental flowers and shrubs</li>
-                    <li>Cultivated fruits (apples, pears, stone fruits)</li>
+                    <li>Roses and other flowers from gardens</li>
+                    <li>Apples, pears, and other fruits from trees</li>
+                    <li>Veggies and leafy plants</li>
                 </ul>
 
-                <h3>Feeding Patterns and Frequency</h3>
-                
+                <h3>When and How Much They Eat</h3>
+
                 <table>
                     <tr>
-                        <th>Aspect</th>
-                        <th>Details</th>
+                        <th>Question</th>
+                        <th>Answer</th>
                     </tr>
                     <tr>
-                        <td><strong>Feeding Time</strong></td>
-                        <td>Primarily nocturnal; feeding from dusk until dawn</td>
+                        <td><strong>When do they eat?</strong></td>
+                        <td>At night — from sunset to sunrise</td>
                     </tr>
                     <tr>
-                        <td><strong>Daily Intake</strong></td>
-                        <td>Approximately 200-300 grams of vegetation per night</td>
+                        <td><strong>How much do they eat?</strong></td>
+                        <td>About a big handful of plants every night</td>
                     </tr>
                     <tr>
-                        <td><strong>Feeding Duration</strong></td>
-                        <td>Typically 4-6 hours throughout the night</td>
+                        <td><strong>How long do they eat?</strong></td>
+                        <td>About 4 to 6 hours each night</td>
                     </tr>
                     <tr>
-                        <td><strong>Water Requirements</strong></td>
-                        <td>Obtains most moisture from food; drinks when available</td>
+                        <td><strong>Do they drink water?</strong></td>
+                        <td>They get most of their water from plants. They drink too when they find water!</td>
                     </tr>
                 </table>
 
                 <div class="info-box">
-                    <h4>⚠️ Important Note</h4>
-                    <p>Wildlife experts discourage feeding wild possums. Human food can be unhealthy and may encourage dependency, conflict, and disease transmission.</p>
+                    <h4>⚠️ Don't Feed Wild Possums!</h4>
+                    <p>Human food can make possums sick. If you feed them, they might stop finding food on their own. It's best to let them eat their natural food.</p>
                 </div>
             </div>
         </div>
@@ -683,71 +688,71 @@
         <!-- REPRODUCTION PAGE -->
         <div id="reproduction" class="page">
             <div class="content-section">
-                <h2>Mating and Reproduction</h2>
-                
-                <p>The reproductive cycle of the Australian brushtail possum is a fascinating example of marsupial biology.</p>
+                <h2>Baby Possums — Called Joeys!</h2>
+
+                <p>Possums have babies in a really special way. They are marsupials, which means their babies grow in a pouch on the mom's belly!</p>
 
                 <div class="info-box">
-                    <h4>🦘 What is the Gestational Period?</h4>
-                    <p><strong>The gestation period for brushtail possums is remarkably short: only 16-18 days.</strong> This brief pregnancy is typical of marsupials. However, the joey continues development for many months in the mother's pouch.</p>
+                    <h4>🦘 How Long Does the Baby Grow Inside Mom?</h4>
+                    <p><strong>Only 16 to 18 days!</strong> That's about as long as a school break. Most animals take much longer. But don't worry — the baby keeps growing inside mom's pouch after it's born!</p>
                 </div>
 
-                <h3>Birth and Development Timeline</h3>
-                
+                <h3>How a Joey Grows Up</h3>
+
                 <table>
                     <tr>
-                        <th>Stage</th>
-                        <th>Timing</th>
-                        <th>Description</th>
+                        <th>Step</th>
+                        <th>When</th>
+                        <th>What Happens</th>
                     </tr>
                     <tr>
-                        <td><strong>Gestation</strong></td>
-                        <td>16-18 days</td>
-                        <td>Pregnancy period before birth</td>
+                        <td><strong>Inside Mom</strong></td>
+                        <td>16–18 days</td>
+                        <td>The baby grows inside mom</td>
                     </tr>
                     <tr>
-                        <td><strong>Birth</strong></td>
+                        <td><strong>Born!</strong></td>
                         <td>Day 0</td>
-                        <td>Joey weighs only 0.2 grams</td>
+                        <td>The joey is born — it's the size of a jellybean!</td>
                     </tr>
                     <tr>
-                        <td><strong>In-Pouch</strong></td>
-                        <td>0-4.5 months</td>
-                        <td>Joey permanently attached to teat</td>
+                        <td><strong>In the Pouch</strong></td>
+                        <td>0–4.5 months</td>
+                        <td>Joey stays inside mom's pouch and drinks milk</td>
                     </tr>
                     <tr>
-                        <td><strong>First Emergence</strong></td>
-                        <td>~4.5-5 months</td>
-                        <td>Joey begins leaving pouch briefly</td>
+                        <td><strong>Peeking Out</strong></td>
+                        <td>About 4.5–5 months</td>
+                        <td>Joey starts to poke its head out of the pouch</td>
                     </tr>
                     <tr>
-                        <td><strong>Back-Riding</strong></td>
-                        <td>~6-7 months</td>
-                        <td>Joey rides on mother's back</td>
+                        <td><strong>Riding on Mom's Back</strong></td>
+                        <td>About 6–7 months</td>
+                        <td>Joey holds on to mom's back during trips outside</td>
                     </tr>
                     <tr>
-                        <td><strong>Weaning</strong></td>
-                        <td>~7-9 months</td>
-                        <td>Joey becomes independent</td>
+                        <td><strong>On Its Own!</strong></td>
+                        <td>About 7–9 months</td>
+                        <td>The joey goes off to live by itself</td>
                     </tr>
                 </table>
 
                 <div class="info-box">
-                    <h4>👶 How Many Offspring?</h4>
-                    <p><strong>Brushtail possums typically give birth to only ONE joey at a time.</strong> While the mother has four teats in her pouch, she almost always produces a single offspring per breeding cycle. Twins are extremely rare.</p>
+                    <h4>👶 How Many Babies at Once?</h4>
+                    <p><strong>Usually just one!</strong> Possums almost always have one baby at a time. Twin joeys are very, very rare.</p>
                 </div>
 
                 <div class="info-box">
-                    <h4>🏠 How Long with Parents?</h4>
-                    <p><strong>Young possums stay with their mother for 7-9 months total</strong>, from birth through weaning. After weaning, juveniles usually disperse within a few weeks to months. By 12-14 months, most are fully independent.</p>
+                    <h4>🏠 How Long Does the Joey Stay with Mom?</h4>
+                    <p><strong>About 7 to 9 months.</strong> After that, the joey goes off on its own. By the time it is about 1 year old, it is fully grown up!</p>
                 </div>
 
-                <h3>Parental Care</h3>
+                <h3>How Moms Take Care of Joeys</h3>
                 <ul>
-                    <li>Mother provides intensive care throughout development</li>
-                    <li>Joey learns foraging skills during back-riding phase</li>
-                    <li>Mothers are highly attentive and protective</li>
-                    <li>Young learn territory boundaries and food selection</li>
+                    <li>Mom keeps the joey safe and warm in her pouch</li>
+                    <li>The joey rides on mom's back and learns where to find food</li>
+                    <li>Mom shows the joey which plants are safe to eat</li>
+                    <li>The joey learns where to sleep and how to stay safe from danger</li>
                 </ul>
             </div>
         </div>
@@ -755,75 +760,75 @@
         <!-- HABITAT PAGE -->
         <div id="habitat" class="page">
             <div class="content-section">
-                <h2>Animal Habitat</h2>
-                
-                <h3>Geographic Distribution</h3>
-                
-                <h4>🗺️ Where on Earth Are They Found?</h4>
+                <h2>Where Do Possums Live?</h2>
+
+                <h3>Where in the World?</h3>
+
+                <h4>🗺️ Their Home Countries</h4>
                 <ul>
-                    <li><strong>Native Range - Australia:</strong> Eastern Australia from Queensland through NSW, Victoria, and South Australia; Western Australia southwest; Tasmania</li>
-                    <li><strong>Introduced:</strong> New Zealand (1850s, now invasive)</li>
-                    <li>Found from sea level to 1,200 meters elevation</li>
+                    <li><strong>Australia:</strong> They live all along the east side of Australia, in Western Australia, and on the island of Tasmania</li>
+                    <li><strong>New Zealand:</strong> People brought possums there long ago — now there are too many of them there!</li>
+                    <li>They can live near the beach or up in hilly areas</li>
                 </ul>
 
-                <h3>Natural Habitat Requirements</h3>
-                
-                <h4>🌿 What Natural Surroundings Do They Need?</h4>
-                
+                <h3>What They Need to Be Happy</h3>
+
+                <h4>🌿 What Makes a Good Possum Home?</h4>
+
                 <table>
                     <tr>
-                        <th>Requirement</th>
-                        <th>Details</th>
+                        <th>What They Need</th>
+                        <th>Why</th>
                     </tr>
                     <tr>
-                        <td><strong>Tree Cover</strong></td>
-                        <td>Eucalyptus forests ideal; also rainforests and open woodland</td>
+                        <td><strong>Trees</strong></td>
+                        <td>For climbing, sleeping, and eating leaves</td>
                     </tr>
                     <tr>
-                        <td><strong>Denning Sites</strong></td>
-                        <td>Tree hollows essential; also caves, rock crevices, human structures</td>
+                        <td><strong>Tree Hollows</strong></td>
+                        <td>Holes in trees make the best bedrooms!</td>
                     </tr>
                     <tr>
-                        <td><strong>Food Sources</strong></td>
-                        <td>Access to eucalyptus or suitable vegetation</td>
+                        <td><strong>Food Plants</strong></td>
+                        <td>Eucalyptus trees or other plants nearby</td>
                     </tr>
                     <tr>
-                        <td><strong>Territory Size</strong></td>
-                        <td>Males: 1-5 hectares; Females: 0.5-2 hectares</td>
+                        <td><strong>Their Own Space</strong></td>
+                        <td>Male possums need more space than females</td>
                     </tr>
                 </table>
 
-                <h3>Den Locations</h3>
-                
-                <h4>🏠 Where Do They Make Their Home?</h4>
+                <h3>Where They Sleep</h3>
 
-                <h4>🌳 In Trees (Primary Choice)</h4>
-                <p><strong>Tree hollows</strong> are the preferred denning site:</p>
+                <h4>🏠 Possum Bedrooms!</h4>
+
+                <h4>🌳 Inside Trees (Their Favorite!)</h4>
+                <p>Possums love to sleep inside holes in old trees:</p>
                 <ul>
-                    <li>Created by age, decay, or fire in large eucalyptus trees</li>
-                    <li>Height: Typically 3-15 meters above ground</li>
-                    <li>Provide protection from weather and predators</li>
-                    <li>Possums often have 2-5 dens and rotate between them</li>
+                    <li>Old trees get holes from age, rot, or fire</li>
+                    <li>The holes are usually high up — 3 to 15 meters off the ground (that's as high as 1 to 5 floors of a building!)</li>
+                    <li>The holes keep them safe from rain and animals that might eat them</li>
+                    <li>A possum usually has 2 to 5 different sleeping spots and takes turns using them</li>
                 </ul>
 
                 <div class="info-box">
-                    <h4>⚠️ Hollow Scarcity</h4>
-                    <p>Natural tree hollows take 100-200 years to form. Loss of old-growth trees has created a shortage of natural dens, making this a conservation concern.</p>
+                    <h4>⚠️ Not Enough Tree Holes!</h4>
+                    <p>Tree holes take 100 to 200 years to form in old trees — longer than any person alive today has been alive! When old trees are cut down, possums lose their homes. That's why it's important to protect big old trees!</p>
                 </div>
 
-                <h4>🏘️ In Urban Structures</h4>
+                <h4>🏘️ In Houses and Buildings</h4>
                 <ul>
-                    <li>Building roof spaces and ceiling cavities</li>
-                    <li>Wall cavities in houses and sheds</li>
-                    <li>Chimneys (if uncapped)</li>
+                    <li>Roof spaces and attics</li>
+                    <li>Gaps in walls and sheds</li>
+                    <li>Chimneys</li>
                     <li>Under decks and porches</li>
                 </ul>
 
-                <h4>🪨 In Rocky Areas</h4>
+                <h4>🪨 In Rocky Places</h4>
                 <ul>
-                    <li>Rock crevices and caves</li>
+                    <li>Cracks in rocks and caves</li>
                     <li>Hollow logs on the ground</li>
-                    <li>Dense vegetation thickets</li>
+                    <li>Thick bushes</li>
                 </ul>
             </div>
         </div>
@@ -831,15 +836,17 @@
         <!-- CLASSIFICATION PAGE -->
         <div id="classification" class="page">
             <div class="content-section">
-                <h2>Scientific Name and Classification</h2>
-                
-                <h3>Primary Scientific Classification</h3>
-                
+                <h2>The Possum's Science Name</h2>
+
+                <p>Scientists give every animal a special name in Latin. This helps scientists all over the world talk about the same animal, no matter what language they speak!</p>
+
+                <h3>How Scientists Group the Possum</h3>
+
                 <table>
                     <tr>
-                        <th>Rank</th>
-                        <th>Scientific Name</th>
-                        <th>Common Name</th>
+                        <th>Group</th>
+                        <th>Science Name</th>
+                        <th>What It Means</th>
                     </tr>
                     <tr>
                         <td><strong>Kingdom</strong></td>
@@ -849,84 +856,85 @@
                     <tr>
                         <td><strong>Phylum</strong></td>
                         <td><em>Chordata</em></td>
-                        <td>Vertebrates</td>
+                        <td>Animals with a backbone</td>
                     </tr>
                     <tr>
                         <td><strong>Class</strong></td>
                         <td><em>Mammalia</em></td>
-                        <td>Mammals</td>
+                        <td>Mammals (they have fur and feed babies milk)</td>
                     </tr>
                     <tr>
                         <td><strong>Infraclass</strong></td>
                         <td><em>Marsupialia</em></td>
-                        <td>Marsupials</td>
+                        <td>Marsupials (animals with pouches, like kangaroos!)</td>
                     </tr>
                     <tr>
                         <td><strong>Order</strong></td>
                         <td><em>Diprotodontia</em></td>
-                        <td>Two-front-toothed marsupials</td>
+                        <td>Has two big front teeth</td>
                     </tr>
                     <tr>
                         <td><strong>Family</strong></td>
                         <td><em>Phalangeridae</em></td>
-                        <td>Possums and cuscuses</td>
+                        <td>The possum family</td>
                     </tr>
                     <tr>
                         <td><strong>Genus</strong></td>
                         <td><em>Trichosurus</em></td>
-                        <td>"Hairy tail"</td>
+                        <td>"Hairy tail" in Greek</td>
                     </tr>
                     <tr>
                         <td><strong>Species</strong></td>
                         <td><em>Trichosurus vulpecula</em></td>
-                        <td>Common brushtail possum</td>
+                        <td>The brushtail possum</td>
                     </tr>
                 </table>
 
                 <div class="info-box">
-                    <h4>📖 Name Etymology</h4>
-                    <p><strong><em>Trichosurus vulpecula</em></strong>:</p>
+                    <h4>📖 What Does the Name Mean?</h4>
+                    <p><strong><em>Trichosurus vulpecula</em></strong> means "hairy-tailed little fox"!</p>
                     <ul>
-                        <li><em>Trichosurus</em>: Greek "hairy tail"</li>
-                        <li><em>vulpecula</em>: Latin "little fox" (fox-like face)</li>
+                        <li><em>Trichosurus</em>: Greek for "hairy tail"</li>
+                        <li><em>vulpecula</em>: Latin for "little fox" — because their face looks a bit like a fox!</li>
                     </ul>
                 </div>
 
-                <h3>Subspecies</h3>
-                
+                <h3>Different Types of Brushtail Possums</h3>
+
+                <p>There are a few slightly different kinds of brushtail possum depending on where they live:</p>
+
                 <table>
                     <tr>
-                        <th>Subspecies</th>
-                        <th>Location</th>
-                        <th>Features</th>
+                        <th>Type</th>
+                        <th>Where They Live</th>
+                        <th>What's Different</th>
                     </tr>
                     <tr>
                         <td><em>T. v. vulpecula</em></td>
-                        <td>Eastern/southeastern Australia</td>
-                        <td>Medium-sized; gray-brown fur</td>
+                        <td>Eastern Australia</td>
+                        <td>Medium size, gray-brown fur</td>
                     </tr>
                     <tr>
                         <td><em>T. v. fuliginosus</em></td>
-                        <td>Tasmania</td>
-                        <td>Larger; darker, thicker fur</td>
+                        <td>Tasmania (an island)</td>
+                        <td>Bigger, with darker and thicker fur</td>
                     </tr>
                     <tr>
                         <td><em>T. v. arnhemensis</em></td>
                         <td>Northern Australia</td>
-                        <td>Smaller; lighter coloration</td>
+                        <td>Smaller, with lighter-colored fur</td>
                     </tr>
                 </table>
 
-                <h3>Conservation Status</h3>
+                <h3>Are They Endangered?</h3>
                 <ul>
-                    <li><strong>IUCN:</strong> Least Concern (Australia)</li>
-                    <li><strong>Australia:</strong> Not Threatened - widespread and abundant</li>
-                    <li><strong>New Zealand:</strong> Invasive Pest - causing ecological damage</li>
+                    <li><strong>In Australia:</strong> They are doing well — there are lots of them!</li>
+                    <li><strong>In New Zealand:</strong> There are too many — they eat too many plants and are hurting the forest</li>
                 </ul>
 
                 <div class="info-box">
-                    <h4>🌏 A Conservation Paradox</h4>
-                    <p>In Australia, it's a valued native species. In New Zealand, where introduced, it's one of the most damaging invasive species.</p>
+                    <h4>🌏 A Puzzling Problem</h4>
+                    <p>In Australia the possum is a loved native animal. In New Zealand, where people brought them long ago, there are now too many and they are causing problems for other wildlife. The same animal — two very different stories!</p>
                 </div>
             </div>
         </div>
@@ -934,11 +942,11 @@
         <!-- ANATOMY PAGE -->
         <div id="anatomy" class="page">
             <div class="content-section">
-                <h2>Anatomy and Biology</h2>
-                
-                <h3>Physical Dimensions</h3>
-                
-                <h4>📏 Height, Weight, and Size</h4>
+                <h2>The Possum's Body</h2>
+
+                <h3>How Big Are They?</h3>
+
+                <h4>📏 Size and Weight</h4>
 
                 <table>
                     <tr>
@@ -947,99 +955,97 @@
                         <th>Females</th>
                     </tr>
                     <tr>
-                        <td><strong>Head-Body Length</strong></td>
-                        <td>35-55 cm</td>
-                        <td>32-50 cm</td>
+                        <td><strong>Body Length</strong></td>
+                        <td>35–55 cm (about as long as your arm!)</td>
+                        <td>32–50 cm (about as long as a school ruler and a half!)</td>
                     </tr>
                     <tr>
                         <td><strong>Tail Length</strong></td>
-                        <td>25-40 cm</td>
-                        <td>24-38 cm</td>
+                        <td>25–40 cm (about as long as a school ruler!)</td>
+                        <td>24–38 cm (about as long as a school ruler!)</td>
                     </tr>
                     <tr>
-                        <td><strong>Total Length</strong></td>
-                        <td>60-95 cm</td>
-                        <td>56-88 cm</td>
+                        <td><strong>Full Length</strong></td>
+                        <td>60–95 cm total (about as tall as a 6-year-old!)</td>
+                        <td>56–88 cm total (about as tall as a 6-year-old!)</td>
                     </tr>
                     <tr>
                         <td><strong>Weight</strong></td>
-                        <td>2.0-4.5 kg</td>
-                        <td>1.5-3.5 kg</td>
+                        <td>2.0–4.5 kg (like a big bag of apples!)</td>
+                        <td>1.5–3.5 kg (like a large bottle of water!)</td>
                     </tr>
                 </table>
 
-                <h3>Unique Physical Characteristics</h3>
+                <h3>Special Body Parts</h3>
 
-                <h4>The Distinctive Bushy Tail</h4>
+                <h4>That Amazing Fluffy Tail</h4>
                 <ul>
-                    <li><strong>Length:</strong> 25-40 cm, prehensile</li>
-                    <li>Used as a "fifth limb" when climbing</li>
-                    <li>Thickly furred and bushy</li>
-                    <li>Functions: balance, gripping, fat storage, communication</li>
+                    <li><strong>Length:</strong> 25–40 cm — nearly as long as the body!</li>
+                    <li>It can grab and wrap around branches like an extra hand</li>
+                    <li>Super thick and fluffy</li>
+                    <li>Used for balance, gripping, keeping warm, and saying things to other possums</li>
                 </ul>
 
-                <h4>🦘 Marsupial Pouch</h4>
-                <p>Female possums have a forward-opening pouch:</p>
+                <h4>🦘 The Pouch (Only on Females)</h4>
+                <p>Female possums have a pouch on their belly for carrying babies:</p>
                 <ul>
-                    <li>Contains four teats</li>
-                    <li>Opens toward the head (unusual)</li>
-                    <li>Strong sphincter muscles close opening</li>
+                    <li>Has four teats inside for feeding babies</li>
+                    <li>The opening faces upward, toward the head</li>
+                    <li>Strong muscles keep it closed so the joey stays safe inside</li>
                 </ul>
 
-                <h4>Fur and Coloration</h4>
+                <h4>Fur and Colors</h4>
                 <ul>
-                    <li>Highly variable: gray, brown, red-brown, black, or cream</li>
-                    <li>Lighter belly (cream or white)</li>
-                    <li>Dense, soft underfur with longer guard hairs</li>
+                    <li>Possums can be gray, brown, reddish-brown, black, or even cream!</li>
+                    <li>Their belly is lighter — usually cream or white</li>
+                    <li>Their fur is soft and thick to keep them warm</li>
                 </ul>
 
-                <h3>Internal Systems</h3>
+                <h3>Inside Their Body</h3>
 
-                <h4>Respiratory System</h4>
-                <p><strong>How the Animal Breathes:</strong></p>
+                <h4>How They Breathe</h4>
                 <ul>
-                    <li>Paired lungs with diaphragmatic breathing</li>
-                    <li>20-30 breaths per minute at rest</li>
-                    <li>Efficient oxygen exchange for active lifestyle</li>
+                    <li>They breathe with two lungs, just like you!</li>
+                    <li>They take about 20 to 30 breaths per minute when resting — about the same as you do!</li>
                 </ul>
 
-                <h4>Digestive System</h4>
+                <h4>How They Digest Food</h4>
                 <ul>
-                    <li>Greatly enlarged cecum with bacteria</li>
-                    <li>Bacteria break down cellulose and detoxify eucalyptus compounds</li>
-                    <li>Extended colon for fermentation</li>
+                    <li>They have a special part of their gut full of helpful bacteria</li>
+                    <li>These bacteria break down tough leaves and make poisons from plants harmless</li>
+                    <li>It's like having tiny helpers inside their tummy!</li>
                 </ul>
 
-                <h3>Lifespan</h3>
+                <h3>How Long Do They Live?</h3>
 
-                <h4>⏱️ How Long Do They Live?</h4>
+                <h4>⏱️ Possum Lifespans</h4>
 
                 <table>
                     <tr>
-                        <th>Environment</th>
-                        <th>Average</th>
-                        <th>Maximum</th>
+                        <th>Where They Live</th>
+                        <th>Usual Age</th>
+                        <th>Oldest Possible</th>
                     </tr>
                     <tr>
-                        <td><strong>Wild</strong></td>
-                        <td>6-7 years</td>
+                        <td><strong>In the Wild</strong></td>
+                        <td>6–7 years</td>
                         <td>13 years</td>
                     </tr>
                     <tr>
-                        <td><strong>Urban</strong></td>
-                        <td>7-10 years</td>
+                        <td><strong>In a City</strong></td>
+                        <td>7–10 years</td>
                         <td>15 years</td>
                     </tr>
                     <tr>
-                        <td><strong>Captivity</strong></td>
-                        <td>10-13 years</td>
+                        <td><strong>In a Zoo or Sanctuary</strong></td>
+                        <td>10–13 years</td>
                         <td>17 years</td>
                     </tr>
                 </table>
 
                 <div class="info-box">
-                    <h4>🏙️ Urban Advantage</h4>
-                    <p>Urban possums often live longer due to reduced predation, consistent food, and secure den sites. However, they face vehicle collisions and domestic pets.</p>
+                    <h4>🏙️ City Possums Live Longer!</h4>
+                    <p>Possums in cities often live longer because fewer animals try to eat them. But they do have to watch out for cars and pet dogs and cats!</p>
                 </div>
             </div>
         </div>
@@ -1047,115 +1053,113 @@
         <!-- BEHAVIOR PAGE -->
         <div id="behavior" class="page">
             <div class="content-section">
-                <h2>Animal Behavior</h2>
-                
-                <h3>Activity Patterns</h3>
-                
-                <h4>Nocturnal Lifestyle</h4>
-                <p>Brushtail possums are strictly <strong>nocturnal</strong>:</p>
+                <h2>What Possums Do All Day (and Night!)</h2>
+
+                <h3>Night Animals</h3>
+
+                <h4>They Come Out After Dark!</h4>
+                <p>Possums sleep during the day and come out at night:</p>
                 <ul>
-                    <li>Emerge shortly after sunset</li>
-                    <li>Peak activity first 2-3 hours after dark</li>
-                    <li>Return before sunrise</li>
-                    <li>Sleep 14-18 hours during day</li>
+                    <li>They wake up just after the sun goes down</li>
+                    <li>They are most active in the first few hours of the night</li>
+                    <li>They head home before the sun comes back up</li>
+                    <li>They sleep for 14 to 18 hours every day — that's the whole night PLUS all of your school day!</li>
                 </ul>
 
-                <h3>Foraging Behavior</h3>
-                
-                <h4>🍃 How the Animal Gets Food</h4>
+                <h3>Finding Food</h3>
 
-                <h4>Arboreal Foraging</h4>
+                <h4>🍃 How They Eat</h4>
+
+                <h4>Up in the Trees</h4>
                 <ul>
-                    <li>Use claws and prehensile tail to climb</li>
-                    <li>Carefully smell and taste leaves before eating</li>
-                    <li>Hold food with front paws while eating</li>
-                    <li>Select younger, less toxic foliage</li>
-                    <li>Reach out to blossoms for nectar</li>
+                    <li>They use their claws and tail to climb</li>
+                    <li>They sniff and taste leaves before eating them to check they're safe</li>
+                    <li>They hold food with their front paws while they eat</li>
+                    <li>They pick the young, fresh leaves which are less bitter</li>
+                    <li>They stretch out to reach flowers for nectar</li>
                 </ul>
 
-                <h4>Ground Foraging</h4>
+                <h4>On the Ground</h4>
                 <ul>
-                    <li>Descend for fallen fruits or low vegetation</li>
-                    <li>More vigilant due to predation risk</li>
-                    <li>Quick to climb to safety</li>
+                    <li>Sometimes they come down to eat fallen fruit</li>
+                    <li>They look around carefully because it's more dangerous on the ground</li>
+                    <li>They run back up a tree quickly if they feel scared</li>
                 </ul>
 
-                <h3>Defensive Behaviors</h3>
-                
-                <h4>🛡️ How They Protect Themselves</h4>
+                <h3>How They Stay Safe</h3>
 
-                <h4>Primary Defense: Avoidance</h4>
+                <h4>🛡️ Keeping Out of Danger</h4>
+
+                <h4>Staying Hidden</h4>
                 <ul>
-                    <li><strong>Nocturnal activity</strong> reduces encounters with daytime predators</li>
-                    <li><strong>Arboreal lifestyle</strong> escapes ground predators</li>
-                    <li><strong>Den security</strong> in tree hollows during day</li>
-                    <li><strong>Vigilance</strong> with frequent pauses to scan</li>
+                    <li><strong>Coming out at night</strong> means fewer animals are awake to hunt them</li>
+                    <li><strong>Staying in the trees</strong> keeps them away from ground animals</li>
+                    <li><strong>Sleeping inside tree holes</strong> keeps them safe during the day</li>
+                    <li><strong>Looking around often</strong> helps them spot danger early</li>
                 </ul>
 
-                <h4>Active Defense</h4>
+                <h4>Fighting Back</h4>
                 <ul>
-                    <li><strong>Rapid climbing</strong> to escape</li>
-                    <li><strong>Loud hisses</strong> and screeches to startle threats</li>
-                    <li><strong>Threat display</strong> with open mouth showing teeth</li>
-                    <li><strong>Biting and scratching</strong> if cornered</li>
-                    <li><strong>Scent release</strong> when extremely stressed</li>
+                    <li><strong>Climbing fast</strong> to get away</li>
+                    <li><strong>Hissing and screeching</strong> loudly to scare off threats</li>
+                    <li><strong>Opening their mouth wide</strong> to show their teeth</li>
+                    <li><strong>Biting and scratching</strong> if they can't escape</li>
+                    <li><strong>Letting out a bad smell</strong> when they are very scared</li>
                 </ul>
 
                 <div class="info-box">
-                    <h4>⚠️ When Threatened</h4>
-                    <p>A cornered brushtail possum can be surprisingly fierce. They'll stand their ground with gaping mouth, emit threatening hisses, and won't hesitate to bite. Never attempt to handle wild possums.</p>
+                    <h4>⚠️ Don't Try to Pick One Up!</h4>
+                    <p>If a possum feels trapped, it will fight back hard! It will hiss, show its teeth, and may bite. Never try to hold a wild possum.</p>
                 </div>
 
-                <h3>Sleep Behavior</h3>
-                
-                <h4>😴 Sleeping Habits</h4>
+                <h3>How They Sleep</h3>
 
-                <h4>Den Usage</h4>
+                <h4>😴 Possum Nap Time</h4>
+
+                <h4>Their Sleeping Spots</h4>
                 <ul>
-                    <li>Have a preferred main den</li>
-                    <li>Maintain 2-5 den sites and rotate</li>
-                    <li>Change dens every few days to weeks</li>
-                    <li>Curl into ball with tail wrapped around body</li>
+                    <li>They have one favorite sleeping spot but also use 2 to 5 others</li>
+                    <li>They swap between spots every few days</li>
+                    <li>They curl into a ball with their tail wrapped around them to keep warm</li>
                 </ul>
 
-                <h4>Sleep Patterns</h4>
+                <h4>Sleep Habits</h4>
                 <ul>
-                    <li>Sleep 14-18 hours per day</li>
-                    <li>Deep sleep during midday</li>
-                    <li>Light sleep near dawn and dusk</li>
-                    <li>Can be roused quickly by disturbances</li>
-                    <li>May enter torpor in extreme cold</li>
+                    <li>They sleep 14 to 18 hours every day</li>
+                    <li>They sleep deepest in the middle of the day</li>
+                    <li>They can wake up quickly if something disturbs them</li>
+                    <li>In very cold weather they may slow down their body to save energy</li>
                 </ul>
 
-                <h3>Communication</h3>
+                <h3>How They Talk to Each Other</h3>
 
-                <h4>Vocalizations</h4>
+                <h4>Sounds They Make</h4>
                 <ul>
-                    <li><strong>Hisses and screeches:</strong> Aggressive or alarmed</li>
-                    <li><strong>Chattering:</strong> During disputes</li>
-                    <li><strong>Grunts:</strong> Contact calls</li>
-                    <li><strong>Soft clicks:</strong> Mother-joey communication</li>
-                    <li><strong>Loud scream:</strong> Territorial advertisement</li>
+                    <li><strong>Hisses and screeches:</strong> "Back off! I'm angry!"</li>
+                    <li><strong>Chattering:</strong> When arguing with another possum</li>
+                    <li><strong>Grunts:</strong> Saying hello to nearby possums</li>
+                    <li><strong>Soft clicks:</strong> Moms talking to their joeys</li>
+                    <li><strong>Loud scream:</strong> "This is my territory!"</li>
                 </ul>
 
-                <h4>Scent Marking</h4>
+                <h4>Leaving Smelly Messages</h4>
                 <ul>
-                    <li>Rub chest gland on branches and objects</li>
-                    <li>Chin marking on surfaces</li>
-                    <li>Advertise presence and territory ownership</li>
+                    <li>Possums rub a scent gland on their chest against branches</li>
+                    <li>This leaves a smell that says "I was here!"</li>
+                    <li>Other possums sniff it and know whose territory it is</li>
                 </ul>
 
-                <h3>Intelligence and Learning</h3>
+                <h3>How Smart Are They?</h3>
                 <ul>
-                    <li><strong>Spatial memory:</strong> Remember complex routes</li>
-                    <li><strong>Problem solving:</strong> Can open latches and containers</li>
-                    <li><strong>Urban adaptation:</strong> Quickly learn human environments</li>
-                    <li><strong>Habituation:</strong> Reduced fear over time</li>
+                    <li><strong>Great memory:</strong> They remember the best paths through the trees</li>
+                    <li><strong>Problem solvers:</strong> They can open latches and containers to get food</li>
+                    <li><strong>Fast learners:</strong> City possums quickly figure out how to live around people</li>
+                    <li><strong>Less scared over time:</strong> They get used to things that aren't a real danger</li>
                 </ul>
 
                 <div class="info-box">
-                    <h4>🏙️ Urban Adaptations</h4>
-                    <p>Urban possums show remarkable flexibility. They've learned to navigate power lines, recognize feeding schedules, tolerate close proximity to people, and time movements to avoid traffic.</p>
+                    <h4>🏙️ City Possum Superpowers!</h4>
+                    <p>Possums that live in cities are very smart. They have learned to walk along power lines like tightropes, find food in gardens, and know when cars are coming. Pretty impressive!</p>
                 </div>
             </div>
         </div>
@@ -1163,7 +1167,7 @@
 
     <footer>
         <p>&copy; 2026 Australian Brushtail Possum Educational Website</p>
-        <p>All information is for educational purposes.</p>
+        <p>All information is for learning purposes.</p>
     </footer>
 
     <script>
@@ -1172,18 +1176,18 @@
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            
+
             // Remove active class from all nav buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // Show selected page
             document.getElementById(pageId).classList.add('active');
-            
+
             // Add active class to clicked button
             event.target.classList.add('active');
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
         }
