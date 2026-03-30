@@ -317,6 +317,93 @@
             margin-top: 3rem;
         }
 
+        /* Popular Culture Page - Kid-Friendly Styles */
+        .pop-page-intro {
+            background: linear-gradient(135deg, #fffbe6, #e8f5e9);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            border: 2px dashed var(--secondary-color);
+            text-align: center;
+        }
+
+        .pop-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .pop-section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .pop-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .pop-card {
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+        }
+
+        .pop-card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pop-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+        }
+
+        .pop-card--movie  { background: #fff3e0; border-left: 5px solid #ff9800; }
+        .pop-card--book   { background: #e8f5e9; border-left: 5px solid #4caf50; }
+        .pop-card--doc    { background: #e3f2fd; border-left: 5px solid #2196f3; }
+        .pop-card--article{ background: #fce4ec; border-left: 5px solid #e91e63; }
+
+        .pop-funfact {
+            background: linear-gradient(135deg, #fffde7, #fff9c4);
+            border: 3px solid #fdd835;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pop-funfact-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 0.5rem;
+        }
+
+        .pop-funfact p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #444;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .pop-cards { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -1165,64 +1252,101 @@
             <div class="content-section">
                 <h2>Popular Culture</h2>
 
-                <p>The possum — and its North American cousin, the opossum — has made a surprisingly rich impression on popular culture worldwide. From beloved children's books to landmark documentaries, these marsupials have been celebrated, mythologised, and sometimes misunderstood across film, literature, and media.</p>
-
-                <h3>Movies</h3>
-
-                <h4>Over the Hedge (2006)</h4>
-                <p>This DreamWorks animated film features Ozzie (voiced by William Shatner) and his daughter Heather — a North American opossum father-daughter duo whose running gag is dramatically "playing dead." Their catchphrase, <em>"We die, so that we live!"</em>, turned the opossum's tonic immobility reflex into a pop-culture punchline seen by millions of children worldwide.</p>
-
-                <h4>Fantastic Mr. Fox (2009)</h4>
-                <p>Wes Anderson's stop-motion adaptation of the Roald Dahl novel adds Kylie Sven Opossum as Mr. Fox's loyal sidekick — placed in what is clearly an English countryside setting. North American opossums do not exist in England, making Kylie a charming but geographically impossible character.</p>
-
-                <h4>Ice Age: The Meltdown (2006) and sequels</h4>
-                <p>Characters Crash (Seann William Scott) and Eddie (Josh Peck) are North American opossums who became fan favourites across the franchise. They are routinely referred to as "possums" in promotional materials, merchandise, and fan wikis — a high-profile example of the possum/opossum naming conflation at franchise scale.</p>
-
-                <h3>Books</h3>
-
-                <h4>Possum Magic by Mem Fox (1983)</h4>
-                <p>Australia's best-selling children's book of all time, with nearly 5 million copies sold. Features Grandma Poss and a young possum named Hush, who is made invisible by bush magic and must travel across Australia eating iconic foods to become visible again. The book topped the Australian Booksellers Association's 50 Favourite Kids' Books list in 2014, and in 2017 the Royal Australian Mint issued commemorative coins in its honour.</p>
-
-                <h4>Pogo comic strip by Walt Kelly (1948–1975)</h4>
-                <p>Pogo Possum — actually a Georgia swamp opossum — was the gentle philosophical everyman of one of America's most celebrated satirical comic strips. At peak syndication, Pogo reached approximately 37 million readers across 450 newspapers. The strip's most famous line, <em>"We have met the enemy and he is us,"</em> originated from a 1970 Earth Day poster and has since entered the English language permanently, attributed to a possum.</p>
-
-                <h4>'Possum by Mary Grant Bruce (1920)</h4>
-                <p>One of the earliest Australian literary titles to use the word "possum," this children's novel set in Gippsland reflects how deeply the animal had entered the Australian cultural vernacular as an affectionate nickname by the early 20th century.</p>
-
-                <h3>Documentaries</h3>
-
-                <h4>Possum Wars (2013)</h4>
-                <p>Produced by 360 Degree Films and broadcast on ABC Australia on 15 December 2013, this one-hour documentary focuses on brushtail possums pushed into urban environments and the wildlife carers who rescue and rehabilitate them. It is one of the most focused documentary treatments of the species available.</p>
-
-                <h4>Wildlife on One: "Possums: Tales of the Unexpected" (BBC, 1996)</h4>
-                <p>Narrated by Sir David Attenborough as part of the BBC's flagship natural history strand, this episode took viewers "inside the nocturnal world of the Australian Possum." Reaching a global audience through the BBC brand and Attenborough's narration, it remains one of the highest-profile natural history treatments of Australian possums ever produced.</p>
-
-                <h4>Magical Land of Oz — "Brushtail Possums Fight for Trees in a Melbourne Park" (PBS)</h4>
-                <p>An episode within this Australian nature documentary series, streamed via PBS in the United States. It features brushtail possums in an urban Melbourne park, bringing the species to an American audience that would otherwise associate "possum" exclusively with the North American opossum.</p>
-
-                <h3>Articles</h3>
-
-                <h4>"Possum: An Ecological Nightmare" — New Zealand Geographic (1992)</h4>
-                <p>Written by Stefan Seitzer, this foundational piece of environmental journalism examines how brushtail possums introduced to New Zealand for the 1850s fur trade became "the country's 70 million marsupial invaders," consuming approximately 21,000 tonnes of vegetation daily. It covers conservation responses, the possum fur industry, and their role in spreading bovine tuberculosis — and remains widely referenced today.</p>
-
-                <h4>"Possums, facts and photos" — National Geographic (ongoing)</h4>
-                <p>A comprehensive reference article on the possum suborder (Phalangeriformes), covering all 70 species, their range, diet, and the possum/opossum distinction. Among the highest-traffic English-language resources on Australian possums, it notably addresses the naming confusion head-on.</p>
-
-                <h4>"A guide to Australia's 27 species of possums and gliders" — Australian Geographic (2019)</h4>
-                <p>A comprehensive illustrated guide covering all five possum and glider families found in Australia. The article notes that up to one-quarter of the 27 species are listed as threatened — a significant conservation fact rarely communicated in popular coverage.</p>
-
-                <h3>Misrepresentation in Popular Culture</h3>
-
-                <div class="info-box">
-                    <h4>⚠️ "Playing Possum" — The Biggest Mix-Up</h4>
-                    <p>The phrase <strong>"playing possum"</strong> (first recorded in American English c. 1807) refers to the Virginia <em>opossum's</em> involuntary tonic immobility — a physiological reflex triggered by extreme stress, not a conscious act. <strong>Australian possums do not exhibit this behaviour.</strong> Yet the phrase is globally understood as describing "possum" behaviour. The confusion is rooted in history: "opossum" entered English in 1610 from the Virginia Algonquian word <em>opassom</em>; British naturalists later borrowed the shortened form "possum" for similar-looking Australian marsupials, cementing the ambiguity permanently. The cultural impact is significant: millions of people worldwide believe Australian possums fake death, when in fact they do not.</p>
+                <div class="pop-page-intro">
+                    Did you know possums are stars too? 🌟 They show up in movies, books, and TV shows all around the world! Let's explore where you can spot them.
                 </div>
 
-                <h4>Crash and Eddie (Ice Age) — Opossums Called "Possums"</h4>
-                <p>The Ice Age franchise's opossum characters are systematically referred to as "possums" in promotional materials, merchandise, and media coverage. At the scale of a global animated franchise, this reinforces the perception that "possum" and "opossum" are interchangeable — contributing to public confusion about two distinct animals on different continents.</p>
+                <!-- MOVIES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🎬 Movies</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Over the Hedge (2006)</div>
+                            <p>Ozzie and his daughter Heather are opossums in this fun DreamWorks cartoon! Their big trick is dramatically pretending to be dead — their famous line is <em>"We die, so that we live!"</em> 😄</p>
+                        </div>
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Fantastic Mr. Fox (2009)</div>
+                            <p>Kylie is an opossum who becomes Mr. Fox's loyal helper in this stop-motion film based on Roald Dahl's story. Fun fact: opossums don't actually live in England where the movie is set! 🦊</p>
+                        </div>
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Ice Age: The Meltdown (2006)</div>
+                            <p>Crash and Eddie are funny opossum brothers who join the Ice Age gang on their adventures. They appear in several Ice Age movies and are big fan favourites! 🧊</p>
+                        </div>
+                    </div>
+                </div>
 
-                <h4>Kylie the Opossum in Fantastic Mr. Fox — Wrong Continent</h4>
-                <p>Wes Anderson's film places a North American opossum in an English countryside setting without acknowledgement. The character's geographic impossibility goes unaddressed, reflecting an unconscious assumption that "possum/opossum" is a generic woodland creature rather than a species tied to a specific continent.</p>
+                <!-- BOOKS -->
+                <div class="pop-section">
+                    <div class="pop-section-title">📚 Books</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">Possum Magic by Mem Fox (1983)</div>
+                            <p>Australia's best-selling children's book ever — nearly 5 million copies sold! Grandma Poss uses bush magic to make little Hush invisible, and they travel all over Australia to bring her back. 🪄</p>
+                        </div>
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">Pogo by Walt Kelly (1948–1975)</div>
+                            <p>Pogo is a friendly opossum who lives in a swamp in Georgia, USA. His comic strip was read by 37 million people every day! His famous saying — <em>"We have met the enemy and he is us"</em> — is still used today. 🗞️</p>
+                        </div>
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">'Possum by Mary Grant Bruce (1920)</div>
+                            <p>One of the earliest Australian children's novels to use the name "possum." It shows how much Australians loved possums — they even used the word as a friendly nickname for people! 🇦🇺</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOCUMENTARIES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🎥 Documentaries</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Possum Wars (2013)</div>
+                            <p>This ABC Australia documentary shows brushtail possums moving into cities and the kind wildlife carers who look after them. A great watch for any animal lover! 🏙️</p>
+                        </div>
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Wildlife on One: Possums (BBC, 1996)</div>
+                            <p>Famous nature presenter Sir David Attenborough narrated this BBC episode all about Australian possums. It was seen by people all over the world! 🌍</p>
+                        </div>
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Magical Land of Oz (PBS)</div>
+                            <p>This nature series from Australia features brushtail possums living in a Melbourne park. It was shown on PBS in the United States, introducing American kids to Australian possums! 🐾</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTICLES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">📰 Articles</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--article">
+                            <div class="pop-card-title">National Geographic — Possums, Facts and Photos</div>
+                            <p>National Geographic has a big article all about possums — covering all 70 species, what they eat, where they live, and even why people mix up possums and opossums. 📖</p>
+                        </div>
+                        <div class="pop-card pop-card--article">
+                            <div class="pop-card-title">Australian Geographic — 27 Species of Possums (2019)</div>
+                            <p>Did you know Australia has 27 different kinds of possums and gliders? This article introduces them all, from tiny pygmy possums to acrobatic sugar gliders! 🦘</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DID YOU KNOW -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🤔 Did You Know? Possum Mix-Ups!</div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🎭 "Playing Possum" is actually about opossums!</div>
+                        <p>You might have heard the phrase <strong>"playing possum"</strong> — it means pretending to be asleep or not there. But this actually describes the <em>North American opossum</em>, not the Australian possum! When opossums get very scared, their body automatically freezes and plays dead. Australian possums don't do this at all. The mix-up happened because both animals got called "possum," but they are different animals living on different sides of the world!</p>
+                    </div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🧊 Crash and Eddie in Ice Age are really opossums!</div>
+                        <p>In the Ice Age movies, the funny brothers Crash and Eddie are actually <em>North American opossums</em> — but lots of people (and even some adverts!) call them "possums." They're two different animals! Opossums live in America, while possums live in Australia. Easy to mix up, but now you know the difference! 🌏</p>
+                    </div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🦊 Kylie in Fantastic Mr. Fox is in the wrong country!</div>
+                        <p>Kylie the opossum in Fantastic Mr. Fox is a North American opossum, but the story takes place in the English countryside. Opossums don't actually live in England — so Kylie is a fun character who is a little bit in the wrong place! 😄</p>
+                    </div>
+                </div>
 
             </div>
         </div>
