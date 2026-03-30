@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Brushtail Possum - Interactive Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2C5F2D;
+            --secondary-color: #97BC62;
+            --accent-color: #FF6B35;
+            --text-color: #333;
+            --light-bg: #F5F5DC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.5rem;
+            padding: 1rem 2rem 0.5rem;
+        }
+
+        nav ul li button {
+            background: transparent;
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        nav ul li button:hover,
+        nav ul li button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #E55A2B;
+            transform: scale(1.05);
+            color: #FFFFFF;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section h4 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+        }
+
+        table th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background: var(--light-bg);
+        }
+
+        .info-box {
+            background: var(--light-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .info-box h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-item-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .submit-photos {
+            background: linear-gradient(135deg, var(--accent-color), #E55A2B);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .quick-facts {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .quick-facts h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .quick-facts ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .quick-facts ul li {
+            padding: 0.75rem;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 0.75rem;
+            background: var(--light-bg);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg width="50" height="50" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="28" fill="#2C5F2D" stroke="#97BC62" stroke-width="2"/>
+                <ellipse cx="30" cy="32" rx="10" ry="12" fill="#F5F5DC"/>
+                <circle cx="30" cy="20" r="8" fill="#F5F5DC"/>
+                <ellipse cx="25" cy="14" rx="3" ry="4" fill="#F5F5DC"/>
+                <ellipse cx="35" cy="14" rx="3" ry="4" fill="#F5F5DC"/>
+                <circle cx="27" cy="20" r="1.5" fill="#2C1810"/>
+                <circle cx="33" cy="20" r="1.5" fill="#2C1810"/>
+                <circle cx="30" cy="23" r="1" fill="#2C1810"/>
+            </svg>
+            <h1>Australian Brushtail Possum</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><button onclick="showPage('home')" class="nav-btn active">Home</button></li>
+                <li><button onclick="showPage('gallery')" class="nav-btn">Gallery</button></li>
+                <li><button onclick="showPage('diet')" class="nav-btn">Diet</button></li>
+                <li><button onclick="showPage('reproduction')" class="nav-btn">Reproduction</button></li>
+                <li><button onclick="showPage('habitat')" class="nav-btn">Habitat</button></li>
+                <li><button onclick="showPage('classification')" class="nav-btn">Classification</button></li>
+                <li><button onclick="showPage('anatomy')" class="nav-btn">Anatomy</button></li>
+                <li><button onclick="showPage('behavior')" class="nav-btn">Behavior</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Welcome to the World of the Australian Brushtail Possum</h2>
+                    <p>Discover one of Australia's most iconic marsupials - a fascinating nocturnal creature that has successfully adapted to both wild and urban environments.</p>
+                </div>
+                <div class="hero-image">
+                    <svg width="300" height="300" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="200" cy="220" rx="80" ry="100" fill="#8B7355" stroke="#654321" stroke-width="2"/>
+                        <circle cx="200" cy="140" r="60" fill="#A0826D" stroke="#654321" stroke-width="2"/>
+                        <ellipse cx="170" cy="100" rx="25" ry="35" fill="#A0826D" stroke="#654321" stroke-width="2"/>
+                        <ellipse cx="230" cy="100" rx="25" ry="35" fill="#A0826D" stroke="#654321" stroke-width="2"/>
+                        <circle cx="185" cy="135" r="12" fill="#2C1810"/>
+                        <circle cx="215" cy="135" r="12" fill="#2C1810"/>
+                        <circle cx="200" cy="155" r="8" fill="#2C1810"/>
+                        <ellipse cx="160" cy="280" rx="20" ry="50" fill="#8B7355" stroke="#654321" stroke-width="2"/>
+                        <ellipse cx="240" cy="280" rx="20" ry="50" fill="#8B7355" stroke="#654321" stroke-width="2"/>
+                        <path d="M 200 290 Q 180 340, 160 370 Q 140 380, 130 360 Q 150 350, 165 365 Q 180 355, 200 290" 
+                              fill="#6B5345" stroke="#654321" stroke-width="2"/>
+                    </svg>
+                </div>
+            </section>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🌿 Natural Habitat</h3>
+                    <p>Explore where these adaptable creatures live, from eucalyptus forests to city rooftops.</p>
+                    <button class="btn" onclick="showPage('habitat')">Learn More</button>
+                </div>
+                <div class="info-card">
+                    <h3>🍃 Diet & Feeding</h3>
+                    <p>Discover what brushtail possums eat and their important role in the ecosystem.</p>
+                    <button class="btn" onclick="showPage('diet')">Learn More</button>
+                </div>
+                <div class="info-card">
+                    <h3>👶 Reproduction</h3>
+                    <p>Learn about possum joeys and the fascinating marsupial reproductive cycle.</p>
+                    <button class="btn" onclick="showPage('reproduction')">Learn More</button>
+                </div>
+                <div class="info-card">
+                    <h3>🦘 Behavior</h3>
+                    <p>Understand their nocturnal habits, communication methods, and survival strategies.</p>
+                    <button class="btn" onclick="showPage('behavior')">Learn More</button>
+                </div>
+            </div>
+
+            <section class="quick-facts">
+                <h2>Quick Facts</h2>
+                <ul>
+                    <li><strong>Scientific Name:</strong> <em>Trichosurus vulpecula</em></li>
+                    <li><strong>Size:</strong> 35-55 cm body length, plus 25-40 cm tail</li>
+                    <li><strong>Weight:</strong> 1.5-4.5 kg</li>
+                    <li><strong>Lifespan:</strong> 6-13 years in the wild</li>
+                    <li><strong>Conservation Status:</strong> Least Concern in Australia</li>
+                    <li><strong>Unique Feature:</strong> Bushy, prehensile tail that aids in climbing</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- GALLERY INDEX PAGE -->
+        <!-- 
+        ========================================
+        TO ADD YOUR OWN PHOTOS:
+        ========================================
+        1. Save your 6 possum photos in an "images" folder next to this HTML file
+        2. Name them: possum1.jpg, possum2.jpg, possum3.jpg, possum4.jpg, possum5.jpg, possum6.jpg
+        3. The images will automatically display!
+        
+        OR use online URLs:
+        Replace "images/possum1.jpg" with full URLs like "https://example.com/my-possum-photo.jpg"
+        -->
+        <div id="gallery" class="page">
+            <div class="content-section">
+                <h2>Image Gallery</h2>
+                <p>Explore our collection of Australian brushtail possum images showcasing these remarkable marsupials in various settings and activities. Click on any image to view it on its own page.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="showPage('gallery-1')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum1.jpg with your photo -->
+                        <img src="images/possum1.jpg" alt="Possum in Tree Hollow" style="width: 100%; height: 100%; object-fit: cover;" 
+                             onerror="this.src='https://via.placeholder.com/400x300/8B7355/FFFFFF?text=Photo+1:+Tree+Hollow'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Possum in Tree Hollow</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPage('gallery-2')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum2.jpg with your photo -->
+                        <img src="images/possum2.jpg" alt="Nocturnal Feeding" style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/400x300/2C5F2D/FFFFFF?text=Photo+2:+Feeding'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Nocturnal Feeding</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPage('gallery-3')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum3.jpg with your photo -->
+                        <img src="images/possum3.jpg" alt="Mother with Joey" style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/400x300/A0826D/FFFFFF?text=Photo+3:+Mother+Joey'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Mother with Joey</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPage('gallery-4')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum4.jpg with your photo -->
+                        <img src="images/possum4.jpg" alt="Urban Adaptation" style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Photo+4:+Urban'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Urban Adaptation</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPage('gallery-5')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum5.jpg with your photo -->
+                        <img src="images/possum5.jpg" alt="The Famous Bushy Tail" style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/400x300/6B5345/FFFFFF?text=Photo+5:+Tail'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>The Famous Bushy Tail</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPage('gallery-6')" style="cursor: pointer;">
+                    <div class="gallery-item-image">
+                        <!-- REPLACE: images/possum6.jpg with your photo -->
+                        <img src="images/possum6.jpg" alt="Grooming Behavior" style="width: 100%; height: 100%; object-fit: cover;"
+                             onerror="this.src='https://via.placeholder.com/400x300/97BC62/FFFFFF?text=Photo+6:+Grooming'">
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Grooming Behavior</h3>
+                        <p>Click to view full image and details →</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 3rem; text-align: center;">
+                <h4>📷 Share Your Possum Photos!</h4>
+                <p>Have you encountered an Australian brushtail possum? We'd love to see your photographs! Please <a href="mailto:bushtail_possum@pm.me">Email Us</a> through our website to submit your images for consideration in our gallery.</p>
+
+            </div>
+        </div>
+
+        <!-- INDIVIDUAL GALLERY PAGES -->
+        <div id="gallery-1" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>Possum in Tree Hollow</h2>
+                <div style="background: #f0f0f0; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum1.jpg with your photo -->
+                    <img src="images/possum1.jpg" alt="Possum in Tree Hollow" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/8B7355/FFFFFF?text=Photo+1:+Possum+in+Tree+Hollow'">
+                </div>
+                <h3>Description</h3>
+                <p>A brushtail possum peering out from its favorite eucalyptus tree den. These tree hollows provide essential shelter and are the preferred nesting sites for wild possums. Note the distinctive pointed ears and bright, curious eyes characteristic of the species.</p>
+                <p>Tree hollows are critical habitat features for brushtail possums. These natural cavities, which take 100-200 years to form in old-growth eucalyptus trees, offer protection from weather and predators. A single possum may maintain 2-5 different den sites within its territory and rotate between them every few days.</p>
+            </div>
+        </div>
+
+        <div id="gallery-2" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>Nocturnal Feeding</h2>
+                <div style="background: #1a1a2e; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum2.jpg with your photo -->
+                    <img src="images/possum2.jpg" alt="Nocturnal Feeding" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/2C5F2D/FFFFFF?text=Photo+2:+Nocturnal+Feeding'">
+                </div>
+                <h3>Description</h3>
+                <p>Captured during nighttime foraging, this image shows a brushtail possum eating eucalyptus leaves. Their specialized digestive system allows them to process the toxic compounds found in eucalyptus foliage. The photo highlights their dexterous front paws used for grasping food.</p>
+                <p>Brushtail possums are primarily nocturnal feeders, emerging shortly after sunset to forage. They spend 4-6 hours each night feeding, consuming approximately 200-300 grams of vegetation. Their enlarged cecum contains beneficial bacteria that help break down cellulose and neutralize the toxins in eucalyptus leaves.</p>
+            </div>
+        </div>
+
+        <div id="gallery-3" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>Mother with Joey</h2>
+                <div style="background: #87CEEB; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum3.jpg with your photo -->
+                    <img src="images/possum3.jpg" alt="Mother with Joey" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/A0826D/FFFFFF?text=Photo+3:+Mother+with+Joey'">
+                </div>
+                <h3>Description</h3>
+                <p>A touching moment showing a mother possum with her joey clinging to her back. Young possums spend several months with their mothers after leaving the pouch, learning essential survival skills. This bond is crucial for the joey's development and eventual independence.</p>
+                <p>After spending 4.5-5 months developing in the mother's pouch, joeys begin the "back-riding" phase. During this time (6-9 months of age), the joey clings to its mother's back during nightly foraging trips, learning territory boundaries, food selection, and predator avoidance. This extended parental care is essential for the joey's survival when it becomes independent.</p>
+            </div>
+        </div>
+
+        <div id="gallery-4" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>Urban Adaptation</h2>
+                <div style="background: linear-gradient(to bottom, #FF6B35, #1a1a2e); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum4.jpg with your photo -->
+                    <img src="images/possum4.jpg" alt="Urban Adaptation" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/FF6B35/FFFFFF?text=Photo+4:+Urban+Adaptation'">
+                </div>
+                <h3>Description</h3>
+                <p>A brushtail possum navigating a residential rooftop at dusk. This image illustrates the species' remarkable ability to thrive in urban environments. Their adaptability has made them common visitors to Australian suburbs, where they've learned to coexist with human populations.</p>
+                <p>Urban brushtail possums demonstrate remarkable behavioral flexibility. They've learned to navigate power lines, use building structures as den sites, access ornamental plants for food, and time their movements to avoid traffic and domestic pets. Urban populations often have higher survival rates due to reduced predation pressure and consistent food sources, though they face unique risks from vehicles and human-wildlife conflict.</p>
+            </div>
+        </div>
+
+        <div id="gallery-5" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>The Famous Bushy Tail</h2>
+                <div style="background: #f5f5dc; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum5.jpg with your photo -->
+                    <img src="images/possum5.jpg" alt="The Famous Bushy Tail" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/6B5345/FFFFFF?text=Photo+5:+Bushy+Tail'">
+                </div>
+                <h3>Description</h3>
+                <p>Close-up detail of the brushtail possum's distinctive bushy, prehensile tail. This remarkable appendage serves multiple functions: balance during climbing, gripping branches, and even as a signal during social interactions. The tail's thick fur helps distinguish this species from other possum varieties.</p>
+                <p>The brushtail possum's tail is truly remarkable, measuring 25-40 cm in length (nearly as long as the body). The tail is prehensile, meaning it can grasp and hold onto branches like a fifth limb. The underside of the tail tip has a naked, rough patch that provides enhanced grip. The bushy appearance comes from thick fur, especially at the base, which also serves as a fat storage site and helps with thermoregulation.</p>
+            </div>
+        </div>
+
+        <div id="gallery-6" class="page">
+            <div class="content-section">
+                <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
+                <h2>Grooming Behavior</h2>
+                <div style="background: #2C5F2D; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <!-- REPLACE: images/possum6.jpg with your photo -->
+                    <img src="images/possum6.jpg" alt="Grooming Behavior" 
+                         style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
+                         onerror="this.src='https://via.placeholder.com/800x600/97BC62/FFFFFF?text=Photo+6:+Grooming+Behavior'">
+                </div>
+                <h3>Description</h3>
+                <p>A possum engaged in self-grooming, an essential daily activity. Brushtail possums are fastidious about cleanliness, spending considerable time maintaining their fur. This behavior helps remove parasites and keeps their coat in optimal condition for insulation and water resistance.</p>
+                <p>Grooming is a critical behavior for brushtail possums. They spend significant time each day using their teeth and claws to clean their fur, remove debris, and eliminate parasites. Upon returning to their den after nightly foraging, possums engage in thorough self-grooming sessions, paying special attention to their face, ears, and paws. Mothers also groom their joeys, strengthening the maternal bond while keeping the young possum clean.</p>
+            </div>
+        </div>
+
+        <!-- DIET PAGE -->
+        <div id="diet" class="page">
+            <div class="content-section">
+                <h2>Dietary Habits of the Brushtail Possum</h2>
+                
+                <p>The Australian brushtail possum is primarily <strong>herbivorous</strong>, with a diverse diet that varies depending on habitat, season, and availability of food sources.</p>
+
+                <h3>Primary Food Sources</h3>
+                
+                <h4>🌿 Eucalyptus Leaves</h4>
+                <p>The foundation of the brushtail possum's diet consists of eucalyptus leaves. These leaves contain toxic compounds that would be harmful to most animals, but possums have evolved specialized digestive systems to break down these toxins.</p>
+
+                <h4>🍃 Native Australian Plants</h4>
+                <p>In addition to eucalyptus, brushtail possums consume:</p>
+                <ul>
+                    <li>Acacia leaves and flowers</li>
+                    <li>Native fruits and berries</li>
+                    <li>Blossoms and flowers</li>
+                    <li>Bark and tree sap</li>
+                    <li>Seed pods and native grasses</li>
+                </ul>
+
+                <h4>🏙️ Urban Food Sources</h4>
+                <ul>
+                    <li>Garden vegetables (especially roses, fruit trees)</li>
+                    <li>Ornamental flowers and shrubs</li>
+                    <li>Cultivated fruits (apples, pears, stone fruits)</li>
+                </ul>
+
+                <h3>Feeding Patterns and Frequency</h3>
+                
+                <table>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Feeding Time</strong></td>
+                        <td>Primarily nocturnal; feeding from dusk until dawn</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Intake</strong></td>
+                        <td>Approximately 200-300 grams of vegetation per night</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Feeding Duration</strong></td>
+                        <td>Typically 4-6 hours throughout the night</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Water Requirements</strong></td>
+                        <td>Obtains most moisture from food; drinks when available</td>
+                    </tr>
+                </table>
+
+                <div class="info-box">
+                    <h4>⚠️ Important Note</h4>
+                    <p>Wildlife experts discourage feeding wild possums. Human food can be unhealthy and may encourage dependency, conflict, and disease transmission.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- REPRODUCTION PAGE -->
+        <div id="reproduction" class="page">
+            <div class="content-section">
+                <h2>Mating and Reproduction</h2>
+                
+                <p>The reproductive cycle of the Australian brushtail possum is a fascinating example of marsupial biology.</p>
+
+                <div class="info-box">
+                    <h4>🦘 What is the Gestational Period?</h4>
+                    <p><strong>The gestation period for brushtail possums is remarkably short: only 16-18 days.</strong> This brief pregnancy is typical of marsupials. However, the joey continues development for many months in the mother's pouch.</p>
+                </div>
+
+                <h3>Birth and Development Timeline</h3>
+                
+                <table>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Timing</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Gestation</strong></td>
+                        <td>16-18 days</td>
+                        <td>Pregnancy period before birth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Birth</strong></td>
+                        <td>Day 0</td>
+                        <td>Joey weighs only 0.2 grams</td>
+                    </tr>
+                    <tr>
+                        <td><strong>In-Pouch</strong></td>
+                        <td>0-4.5 months</td>
+                        <td>Joey permanently attached to teat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Emergence</strong></td>
+                        <td>~4.5-5 months</td>
+                        <td>Joey begins leaving pouch briefly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Back-Riding</strong></td>
+                        <td>~6-7 months</td>
+                        <td>Joey rides on mother's back</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weaning</strong></td>
+                        <td>~7-9 months</td>
+                        <td>Joey becomes independent</td>
+                    </tr>
+                </table>
+
+                <div class="info-box">
+                    <h4>👶 How Many Offspring?</h4>
+                    <p><strong>Brushtail possums typically give birth to only ONE joey at a time.</strong> While the mother has four teats in her pouch, she almost always produces a single offspring per breeding cycle. Twins are extremely rare.</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>🏠 How Long with Parents?</h4>
+                    <p><strong>Young possums stay with their mother for 7-9 months total</strong>, from birth through weaning. After weaning, juveniles usually disperse within a few weeks to months. By 12-14 months, most are fully independent.</p>
+                </div>
+
+                <h3>Parental Care</h3>
+                <ul>
+                    <li>Mother provides intensive care throughout development</li>
+                    <li>Joey learns foraging skills during back-riding phase</li>
+                    <li>Mothers are highly attentive and protective</li>
+                    <li>Young learn territory boundaries and food selection</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- HABITAT PAGE -->
+        <div id="habitat" class="page">
+            <div class="content-section">
+                <h2>Animal Habitat</h2>
+                
+                <h3>Geographic Distribution</h3>
+                
+                <h4>🗺️ Where on Earth Are They Found?</h4>
+                <ul>
+                    <li><strong>Native Range - Australia:</strong> Eastern Australia from Queensland through NSW, Victoria, and South Australia; Western Australia southwest; Tasmania</li>
+                    <li><strong>Introduced:</strong> New Zealand (1850s, now invasive)</li>
+                    <li>Found from sea level to 1,200 meters elevation</li>
+                </ul>
+
+                <h3>Natural Habitat Requirements</h3>
+                
+                <h4>🌿 What Natural Surroundings Do They Need?</h4>
+                
+                <table>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Tree Cover</strong></td>
+                        <td>Eucalyptus forests ideal; also rainforests and open woodland</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Denning Sites</strong></td>
+                        <td>Tree hollows essential; also caves, rock crevices, human structures</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Food Sources</strong></td>
+                        <td>Access to eucalyptus or suitable vegetation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Territory Size</strong></td>
+                        <td>Males: 1-5 hectares; Females: 0.5-2 hectares</td>
+                    </tr>
+                </table>
+
+                <h3>Den Locations</h3>
+                
+                <h4>🏠 Where Do They Make Their Home?</h4>
+
+                <h4>🌳 In Trees (Primary Choice)</h4>
+                <p><strong>Tree hollows</strong> are the preferred denning site:</p>
+                <ul>
+                    <li>Created by age, decay, or fire in large eucalyptus trees</li>
+                    <li>Height: Typically 3-15 meters above ground</li>
+                    <li>Provide protection from weather and predators</li>
+                    <li>Possums often have 2-5 dens and rotate between them</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>⚠️ Hollow Scarcity</h4>
+                    <p>Natural tree hollows take 100-200 years to form. Loss of old-growth trees has created a shortage of natural dens, making this a conservation concern.</p>
+                </div>
+
+                <h4>🏘️ In Urban Structures</h4>
+                <ul>
+                    <li>Building roof spaces and ceiling cavities</li>
+                    <li>Wall cavities in houses and sheds</li>
+                    <li>Chimneys (if uncapped)</li>
+                    <li>Under decks and porches</li>
+                </ul>
+
+                <h4>🪨 In Rocky Areas</h4>
+                <ul>
+                    <li>Rock crevices and caves</li>
+                    <li>Hollow logs on the ground</li>
+                    <li>Dense vegetation thickets</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CLASSIFICATION PAGE -->
+        <div id="classification" class="page">
+            <div class="content-section">
+                <h2>Scientific Name and Classification</h2>
+                
+                <h3>Primary Scientific Classification</h3>
+                
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Scientific Name</th>
+                        <th>Common Name</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Kingdom</strong></td>
+                        <td><em>Animalia</em></td>
+                        <td>Animals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phylum</strong></td>
+                        <td><em>Chordata</em></td>
+                        <td>Vertebrates</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Class</strong></td>
+                        <td><em>Mammalia</em></td>
+                        <td>Mammals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Infraclass</strong></td>
+                        <td><em>Marsupialia</em></td>
+                        <td>Marsupials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Order</strong></td>
+                        <td><em>Diprotodontia</em></td>
+                        <td>Two-front-toothed marsupials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Family</strong></td>
+                        <td><em>Phalangeridae</em></td>
+                        <td>Possums and cuscuses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Genus</strong></td>
+                        <td><em>Trichosurus</em></td>
+                        <td>"Hairy tail"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Species</strong></td>
+                        <td><em>Trichosurus vulpecula</em></td>
+                        <td>Common brushtail possum</td>
+                    </tr>
+                </table>
+
+                <div class="info-box">
+                    <h4>📖 Name Etymology</h4>
+                    <p><strong><em>Trichosurus vulpecula</em></strong>:</p>
+                    <ul>
+                        <li><em>Trichosurus</em>: Greek "hairy tail"</li>
+                        <li><em>vulpecula</em>: Latin "little fox" (fox-like face)</li>
+                    </ul>
+                </div>
+
+                <h3>Subspecies</h3>
+                
+                <table>
+                    <tr>
+                        <th>Subspecies</th>
+                        <th>Location</th>
+                        <th>Features</th>
+                    </tr>
+                    <tr>
+                        <td><em>T. v. vulpecula</em></td>
+                        <td>Eastern/southeastern Australia</td>
+                        <td>Medium-sized; gray-brown fur</td>
+                    </tr>
+                    <tr>
+                        <td><em>T. v. fuliginosus</em></td>
+                        <td>Tasmania</td>
+                        <td>Larger; darker, thicker fur</td>
+                    </tr>
+                    <tr>
+                        <td><em>T. v. arnhemensis</em></td>
+                        <td>Northern Australia</td>
+                        <td>Smaller; lighter coloration</td>
+                    </tr>
+                </table>
+
+                <h3>Conservation Status</h3>
+                <ul>
+                    <li><strong>IUCN:</strong> Least Concern (Australia)</li>
+                    <li><strong>Australia:</strong> Not Threatened - widespread and abundant</li>
+                    <li><strong>New Zealand:</strong> Invasive Pest - causing ecological damage</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>🌏 A Conservation Paradox</h4>
+                    <p>In Australia, it's a valued native species. In New Zealand, where introduced, it's one of the most damaging invasive species.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANATOMY PAGE -->
+        <div id="anatomy" class="page">
+            <div class="content-section">
+                <h2>Anatomy and Biology</h2>
+                
+                <h3>Physical Dimensions</h3>
+                
+                <h4>📏 Height, Weight, and Size</h4>
+
+                <table>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Males</th>
+                        <th>Females</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Head-Body Length</strong></td>
+                        <td>35-55 cm</td>
+                        <td>32-50 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tail Length</strong></td>
+                        <td>25-40 cm</td>
+                        <td>24-38 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Length</strong></td>
+                        <td>60-95 cm</td>
+                        <td>56-88 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weight</strong></td>
+                        <td>2.0-4.5 kg</td>
+                        <td>1.5-3.5 kg</td>
+                    </tr>
+                </table>
+
+                <h3>Unique Physical Characteristics</h3>
+
+                <h4>The Distinctive Bushy Tail</h4>
+                <ul>
+                    <li><strong>Length:</strong> 25-40 cm, prehensile</li>
+                    <li>Used as a "fifth limb" when climbing</li>
+                    <li>Thickly furred and bushy</li>
+                    <li>Functions: balance, gripping, fat storage, communication</li>
+                </ul>
+
+                <h4>🦘 Marsupial Pouch</h4>
+                <p>Female possums have a forward-opening pouch:</p>
+                <ul>
+                    <li>Contains four teats</li>
+                    <li>Opens toward the head (unusual)</li>
+                    <li>Strong sphincter muscles close opening</li>
+                </ul>
+
+                <h4>Fur and Coloration</h4>
+                <ul>
+                    <li>Highly variable: gray, brown, red-brown, black, or cream</li>
+                    <li>Lighter belly (cream or white)</li>
+                    <li>Dense, soft underfur with longer guard hairs</li>
+                </ul>
+
+                <h3>Internal Systems</h3>
+
+                <h4>Respiratory System</h4>
+                <p><strong>How the Animal Breathes:</strong></p>
+                <ul>
+                    <li>Paired lungs with diaphragmatic breathing</li>
+                    <li>20-30 breaths per minute at rest</li>
+                    <li>Efficient oxygen exchange for active lifestyle</li>
+                </ul>
+
+                <h4>Digestive System</h4>
+                <ul>
+                    <li>Greatly enlarged cecum with bacteria</li>
+                    <li>Bacteria break down cellulose and detoxify eucalyptus compounds</li>
+                    <li>Extended colon for fermentation</li>
+                </ul>
+
+                <h3>Lifespan</h3>
+
+                <h4>⏱️ How Long Do They Live?</h4>
+
+                <table>
+                    <tr>
+                        <th>Environment</th>
+                        <th>Average</th>
+                        <th>Maximum</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Wild</strong></td>
+                        <td>6-7 years</td>
+                        <td>13 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Urban</strong></td>
+                        <td>7-10 years</td>
+                        <td>15 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Captivity</strong></td>
+                        <td>10-13 years</td>
+                        <td>17 years</td>
+                    </tr>
+                </table>
+
+                <div class="info-box">
+                    <h4>🏙️ Urban Advantage</h4>
+                    <p>Urban possums often live longer due to reduced predation, consistent food, and secure den sites. However, they face vehicle collisions and domestic pets.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BEHAVIOR PAGE -->
+        <div id="behavior" class="page">
+            <div class="content-section">
+                <h2>Animal Behavior</h2>
+                
+                <h3>Activity Patterns</h3>
+                
+                <h4>Nocturnal Lifestyle</h4>
+                <p>Brushtail possums are strictly <strong>nocturnal</strong>:</p>
+                <ul>
+                    <li>Emerge shortly after sunset</li>
+                    <li>Peak activity first 2-3 hours after dark</li>
+                    <li>Return before sunrise</li>
+                    <li>Sleep 14-18 hours during day</li>
+                </ul>
+
+                <h3>Foraging Behavior</h3>
+                
+                <h4>🍃 How the Animal Gets Food</h4>
+
+                <h4>Arboreal Foraging</h4>
+                <ul>
+                    <li>Use claws and prehensile tail to climb</li>
+                    <li>Carefully smell and taste leaves before eating</li>
+                    <li>Hold food with front paws while eating</li>
+                    <li>Select younger, less toxic foliage</li>
+                    <li>Reach out to blossoms for nectar</li>
+                </ul>
+
+                <h4>Ground Foraging</h4>
+                <ul>
+                    <li>Descend for fallen fruits or low vegetation</li>
+                    <li>More vigilant due to predation risk</li>
+                    <li>Quick to climb to safety</li>
+                </ul>
+
+                <h3>Defensive Behaviors</h3>
+                
+                <h4>🛡️ How They Protect Themselves</h4>
+
+                <h4>Primary Defense: Avoidance</h4>
+                <ul>
+                    <li><strong>Nocturnal activity</strong> reduces encounters with daytime predators</li>
+                    <li><strong>Arboreal lifestyle</strong> escapes ground predators</li>
+                    <li><strong>Den security</strong> in tree hollows during day</li>
+                    <li><strong>Vigilance</strong> with frequent pauses to scan</li>
+                </ul>
+
+                <h4>Active Defense</h4>
+                <ul>
+                    <li><strong>Rapid climbing</strong> to escape</li>
+                    <li><strong>Loud hisses</strong> and screeches to startle threats</li>
+                    <li><strong>Threat display</strong> with open mouth showing teeth</li>
+                    <li><strong>Biting and scratching</strong> if cornered</li>
+                    <li><strong>Scent release</strong> when extremely stressed</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>⚠️ When Threatened</h4>
+                    <p>A cornered brushtail possum can be surprisingly fierce. They'll stand their ground with gaping mouth, emit threatening hisses, and won't hesitate to bite. Never attempt to handle wild possums.</p>
+                </div>
+
+                <h3>Sleep Behavior</h3>
+                
+                <h4>😴 Sleeping Habits</h4>
+
+                <h4>Den Usage</h4>
+                <ul>
+                    <li>Have a preferred main den</li>
+                    <li>Maintain 2-5 den sites and rotate</li>
+                    <li>Change dens every few days to weeks</li>
+                    <li>Curl into ball with tail wrapped around body</li>
+                </ul>
+
+                <h4>Sleep Patterns</h4>
+                <ul>
+                    <li>Sleep 14-18 hours per day</li>
+                    <li>Deep sleep during midday</li>
+                    <li>Light sleep near dawn and dusk</li>
+                    <li>Can be roused quickly by disturbances</li>
+                    <li>May enter torpor in extreme cold</li>
+                </ul>
+
+                <h3>Communication</h3>
+
+                <h4>Vocalizations</h4>
+                <ul>
+                    <li><strong>Hisses and screeches:</strong> Aggressive or alarmed</li>
+                    <li><strong>Chattering:</strong> During disputes</li>
+                    <li><strong>Grunts:</strong> Contact calls</li>
+                    <li><strong>Soft clicks:</strong> Mother-joey communication</li>
+                    <li><strong>Loud scream:</strong> Territorial advertisement</li>
+                </ul>
+
+                <h4>Scent Marking</h4>
+                <ul>
+                    <li>Rub chest gland on branches and objects</li>
+                    <li>Chin marking on surfaces</li>
+                    <li>Advertise presence and territory ownership</li>
+                </ul>
+
+                <h3>Intelligence and Learning</h3>
+                <ul>
+                    <li><strong>Spatial memory:</strong> Remember complex routes</li>
+                    <li><strong>Problem solving:</strong> Can open latches and containers</li>
+                    <li><strong>Urban adaptation:</strong> Quickly learn human environments</li>
+                    <li><strong>Habituation:</strong> Reduced fear over time</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>🏙️ Urban Adaptations</h4>
+                    <p>Urban possums show remarkable flexibility. They've learned to navigate power lines, recognize feeding schedules, tolerate close proximity to people, and time movements to avoid traffic.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Australian Brushtail Possum Educational Website</p>
+        <p>All information is for educational purposes.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
