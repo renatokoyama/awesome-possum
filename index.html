@@ -322,6 +322,93 @@
             margin-top: 3rem;
         }
 
+        /* Popular Culture Page - Kid-Friendly Styles */
+        .pop-page-intro {
+            background: linear-gradient(135deg, #fffbe6, #e8f5e9);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            border: 2px dashed var(--secondary-color);
+            text-align: center;
+        }
+
+        .pop-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .pop-section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .pop-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .pop-card {
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+        }
+
+        .pop-card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pop-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+        }
+
+        .pop-card--movie  { background: #fff3e0; border-left: 5px solid #ff9800; }
+        .pop-card--book   { background: #e8f5e9; border-left: 5px solid #4caf50; }
+        .pop-card--doc    { background: #e3f2fd; border-left: 5px solid #2196f3; }
+        .pop-card--article{ background: #fce4ec; border-left: 5px solid #e91e63; }
+
+        .pop-funfact {
+            background: linear-gradient(135deg, #fffde7, #fff9c4);
+            border: 3px solid #fdd835;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pop-funfact-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 0.5rem;
+        }
+
+        .pop-funfact p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #444;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .pop-cards { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -363,6 +450,7 @@
                 <li><button onclick="showPage('classification')" class="nav-btn">Science Name</button></li>
                 <li><button onclick="showPage('anatomy')" class="nav-btn">Body</button></li>
                 <li><button onclick="showPage('behavior')" class="nav-btn">Behavior</button></li>
+                <li><button onclick="showPage('popular-culture')" class="nav-btn">Popular Culture</button></li>
             </ul>
         </nav>
     </header>
@@ -1161,6 +1249,109 @@
                     <h4>🏙️ City Possum Superpowers!</h4>
                     <p>Possums that live in cities are very smart. They have learned to walk along power lines like tightropes, find food in gardens, and know when cars are coming. Pretty impressive!</p>
                 </div>
+            </div>
+        </div>
+        <!-- POPULAR CULTURE PAGE -->
+        <div id="popular-culture" class="page">
+            <div class="content-section">
+                <h2>Popular Culture</h2>
+
+                <div class="pop-page-intro">
+                    Did you know possums are stars too? 🌟 They show up in movies, books, and TV shows all around the world! Let's explore where you can spot them.
+                </div>
+
+                <!-- MOVIES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🎬 Movies</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Over the Hedge (2006)</div>
+                            <p>Ozzie and his daughter Heather are opossums in this fun DreamWorks cartoon! Their big trick is dramatically pretending to be dead — their famous line is <em>"We die, so that we live!"</em> 😄</p>
+                        </div>
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Fantastic Mr. Fox (2009)</div>
+                            <p>Kylie is an opossum who becomes Mr. Fox's loyal helper in this stop-motion film based on Roald Dahl's story. Fun fact: opossums don't actually live in England where the movie is set! 🦊</p>
+                        </div>
+                        <div class="pop-card pop-card--movie">
+                            <div class="pop-card-title">Ice Age: The Meltdown (2006)</div>
+                            <p>Crash and Eddie are funny opossum brothers who join the Ice Age gang on their adventures. They appear in several Ice Age movies and are big fan favourites! 🧊</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOKS -->
+                <div class="pop-section">
+                    <div class="pop-section-title">📚 Books</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">Possum Magic by Mem Fox (1983)</div>
+                            <p>Australia's best-selling children's book ever — nearly 5 million copies sold! Grandma Poss uses bush magic to make little Hush invisible, and they travel all over Australia to bring her back. 🪄</p>
+                        </div>
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">Pogo by Walt Kelly (1948–1975)</div>
+                            <p>Pogo is a friendly opossum who lives in a swamp in Georgia, USA. His comic strip was read by 37 million people every day! His famous saying — <em>"We have met the enemy and he is us"</em> — is still used today. 🗞️</p>
+                        </div>
+                        <div class="pop-card pop-card--book">
+                            <div class="pop-card-title">'Possum by Mary Grant Bruce (1920)</div>
+                            <p>One of the earliest Australian children's novels to use the name "possum." It shows how much Australians loved possums — they even used the word as a friendly nickname for people! 🇦🇺</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOCUMENTARIES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🎥 Documentaries</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Possum Wars (2013)</div>
+                            <p>This ABC Australia documentary shows brushtail possums moving into cities and the kind wildlife carers who look after them. A great watch for any animal lover! 🏙️</p>
+                        </div>
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Wildlife on One: Possums (BBC, 1996)</div>
+                            <p>Famous nature presenter Sir David Attenborough narrated this BBC episode all about Australian possums. It was seen by people all over the world! 🌍</p>
+                        </div>
+                        <div class="pop-card pop-card--doc">
+                            <div class="pop-card-title">Magical Land of Oz (PBS)</div>
+                            <p>This nature series from Australia features brushtail possums living in a Melbourne park. It was shown on PBS in the United States, introducing American kids to Australian possums! 🐾</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTICLES -->
+                <div class="pop-section">
+                    <div class="pop-section-title">📰 Articles</div>
+                    <div class="pop-cards">
+                        <div class="pop-card pop-card--article">
+                            <div class="pop-card-title">National Geographic — Possums, Facts and Photos</div>
+                            <p>National Geographic has a big article all about possums — covering all 70 species, what they eat, where they live, and even why people mix up possums and opossums. 📖</p>
+                        </div>
+                        <div class="pop-card pop-card--article">
+                            <div class="pop-card-title">Australian Geographic — 27 Species of Possums (2019)</div>
+                            <p>Did you know Australia has 27 different kinds of possums and gliders? This article introduces them all, from tiny pygmy possums to acrobatic sugar gliders! 🦘</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DID YOU KNOW -->
+                <div class="pop-section">
+                    <div class="pop-section-title">🤔 Did You Know? Possum Mix-Ups!</div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🎭 "Playing Possum" is actually about opossums!</div>
+                        <p>You might have heard the phrase <strong>"playing possum"</strong> — it means pretending to be asleep or not there. But this actually describes the <em>North American opossum</em>, not the Australian possum! When opossums get very scared, their body automatically freezes and plays dead. Australian possums don't do this at all. The mix-up happened because both animals got called "possum," but they are different animals living on different sides of the world!</p>
+                    </div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🧊 Crash and Eddie in Ice Age are really opossums!</div>
+                        <p>In the Ice Age movies, the funny brothers Crash and Eddie are actually <em>North American opossums</em> — but lots of people (and even some adverts!) call them "possums." They're two different animals! Opossums live in America, while possums live in Australia. Easy to mix up, but now you know the difference! 🌏</p>
+                    </div>
+
+                    <div class="pop-funfact">
+                        <div class="pop-funfact-title">🦊 Kylie in Fantastic Mr. Fox is in the wrong country!</div>
+                        <p>Kylie the opossum in Fantastic Mr. Fox is a North American opossum, but the story takes place in the English countryside. Opossums don't actually live in England — so Kylie is a fun character who is a little bit in the wrong place! 😄</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
