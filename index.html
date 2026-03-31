@@ -243,6 +243,38 @@
             margin-bottom: 0.5rem;
         }
 
+        figure.inline-photo {
+            margin: 1.5rem 0;
+        }
+
+        figure.inline-photo img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        figure.inline-photo figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .photo-content-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .photo-content-pair {
+                grid-template-columns: 1fr;
+            }
+        }
+
         aside.size-guide {
             background: #EEF7EE;
             border: 2px dashed var(--secondary-color);
@@ -790,11 +822,18 @@
             <div class="content-section">
                 <h2>Baby Possums — Called Joeys!</h2>
 
-                <p>Possums have babies in a really special way. They are marsupials, which means their babies grow in a pouch on the mom's belly!</p>
-
-                <div class="info-box">
-                    <h4>🦘 How Long Does the Baby Grow Inside Mom?</h4>
-                    <p><strong>Only 16 to 18 days!</strong> That's about as long as a school break. Most animals take much longer. But don't worry — the baby keeps growing inside mom's pouch after it's born!</p>
+                <div class="photo-content-pair">
+                    <div>
+                        <p>Possums have babies in a really special way. They are marsupials, which means their babies grow in a pouch on the mom's belly!</p>
+                        <div class="info-box">
+                            <h4>🦘 How Long Does the Baby Grow Inside Mom?</h4>
+                            <p><strong>Only 16 to 18 days!</strong> That's about as long as a school break. Most animals take much longer. But don't worry — the baby keeps growing inside mom's pouch after it's born!</p>
+                        </div>
+                    </div>
+                    <figure class="inline-photo">
+                        <img src="images/baby_possum.jpg" alt="A newborn baby possum joey">
+                        <figcaption>A newborn joey — about the size of a jellybean!</figcaption>
+                    </figure>
                 </div>
 
                 <h3>How a Joey Grows Up</h3>
@@ -847,13 +886,21 @@
                     <p><strong>About 7 to 9 months.</strong> After that, the joey goes off on its own. By the time it is about 1 year old, it is fully grown up!</p>
                 </div>
 
-                <h3>How Moms Take Care of Joeys</h3>
-                <ul>
-                    <li>Mom keeps the joey safe and warm in her pouch</li>
-                    <li>The joey rides on mom's back and learns where to find food</li>
-                    <li>Mom shows the joey which plants are safe to eat</li>
-                    <li>The joey learns where to sleep and how to stay safe from danger</li>
-                </ul>
+                <div class="photo-content-pair">
+                    <figure class="inline-photo">
+                        <img src="images/mom_with_baby_possum.jpg" alt="A mother possum with her joey on her back">
+                        <figcaption>Mom carrying her joey on her back</figcaption>
+                    </figure>
+                    <div>
+                        <h3>How Moms Take Care of Joeys</h3>
+                        <ul>
+                            <li>Mom keeps the joey safe and warm in her pouch</li>
+                            <li>The joey rides on mom's back and learns where to find food</li>
+                            <li>Mom shows the joey which plants are safe to eat</li>
+                            <li>The joey learns where to sleep and how to stay safe from danger</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
