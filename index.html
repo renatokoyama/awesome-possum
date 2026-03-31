@@ -466,15 +466,15 @@
         </div>
         <nav>
             <ul>
-                <li><button onclick="showPage('home')" class="nav-btn active">Home</button></li>
-                <li><button onclick="showPage('gallery')" class="nav-btn">Gallery</button></li>
-                <li><button onclick="showPage('diet')" class="nav-btn">Diet</button></li>
-                <li><button onclick="showPage('reproduction')" class="nav-btn">Babies</button></li>
-                <li><button onclick="showPage('habitat')" class="nav-btn">Habitat</button></li>
-                <li><button onclick="showPage('classification')" class="nav-btn">Science Name</button></li>
-                <li><button onclick="showPage('anatomy')" class="nav-btn">Body</button></li>
-                <li><button onclick="showPage('behavior')" class="nav-btn">Behavior</button></li>
-                <li><button onclick="showPage('popular-culture')" class="nav-btn">Popular Culture</button></li>
+                <li><button onclick="showPage('home')" class="nav-btn active" data-page="home">Home</button></li>
+                <li><button onclick="showPage('gallery')" class="nav-btn" data-page="gallery">Gallery</button></li>
+                <li><button onclick="showPage('diet')" class="nav-btn" data-page="diet">Diet</button></li>
+                <li><button onclick="showPage('reproduction')" class="nav-btn" data-page="reproduction">Babies</button></li>
+                <li><button onclick="showPage('habitat')" class="nav-btn" data-page="habitat">Habitat</button></li>
+                <li><button onclick="showPage('classification')" class="nav-btn" data-page="classification">Science Name</button></li>
+                <li><button onclick="showPage('anatomy')" class="nav-btn" data-page="anatomy">Body</button></li>
+                <li><button onclick="showPage('behavior')" class="nav-btn" data-page="behavior">Behavior</button></li>
+                <li><button onclick="showPage('popular-culture')" class="nav-btn" data-page="popular-culture">Popular Culture</button></li>
             </ul>
         </nav>
     </header>
@@ -1384,7 +1384,18 @@
     </footer>
 
     <script>
-        function showPage(pageId) {
+        function getInitialPageId() {
+            const hashPageId = window.location.hash.replace('#', '');
+            if (hashPageId && document.getElementById(hashPageId)?.classList.contains('page')) {
+                return hashPageId;
+            }
+            return 'home';
+        }
+
+        function showPage(pageId, options = {}) {
+            const { skipHashUpdate = false } = options;
+            const pageToShow = document.getElementById(pageId)?.classList.contains('page') ? pageId : 'home';
+
             // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
@@ -1396,14 +1407,28 @@
             });
 
             // Show selected page
-            document.getElementById(pageId).classList.add('active');
+            document.getElementById(pageToShow).classList.add('active');
 
-            // Add active class to clicked button
-            event.target.classList.add('active');
+            // Add active state to matching nav button (if one exists)
+            const activeNavButton = document.querySelector(`.nav-btn[data-page="${pageToShow}"]`);
+            if (activeNavButton) {
+                activeNavButton.classList.add('active');
+            }
+
+            if (!skipHashUpdate) {
+                window.location.hash = pageToShow;
+            }
 
             // Scroll to top
             window.scrollTo(0, 0);
         }
+
+        window.addEventListener('hashchange', () => {
+            const pageIdFromHash = window.location.hash.replace('#', '');
+            showPage(pageIdFromHash || 'home', { skipHashUpdate: true });
+        });
+
+        showPage(getInitialPageId(), { skipHashUpdate: true });
     </script>
 </body>
 </html>
