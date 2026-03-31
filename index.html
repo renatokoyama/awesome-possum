@@ -314,6 +314,48 @@
             border-radius: 5px;
         }
 
+        /* Content Breakers for long reading sections */
+        .content-break-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .content-break-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .content-break-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .content-break-card img.img-focus-top {
+            object-position: center 20%;
+        }
+
+        .content-break-card img.img-anatomy {
+            height: 220px;
+        }
+
+        .content-break-card img.img-joey {
+            height: 500px;
+            object-position: center 35%;
+        }
+
+        .content-break-caption {
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
         footer {
             background: var(--primary-color);
             color: var(--white);
@@ -706,6 +748,17 @@
 
                 <p>Possums are <strong>plant eaters!</strong> They munch on lots of different plants. What they eat can change depending on where they live and what time of year it is.</p>
 
+                <div class="content-break-grid">
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_tree.jpg" alt="Brushtail possum feeding at night">
+                        <figcaption class="content-break-caption">Most feeding happens after sunset.</figcaption>
+                    </figure>
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_pouch.jpg" alt="Close-up of possum near leaves">
+                        <figcaption class="content-break-caption">Possums use their paws to grab food while eating.</figcaption>
+                    </figure>
+                </div>
+
                 <h3>Favorite Foods</h3>
 
                 <h4>🌿 Eucalyptus Leaves</h4>
@@ -767,6 +820,13 @@
                 <h2>Baby Possums — Called Joeys!</h2>
 
                 <p>Possums have babies in a really special way. They are marsupials, which means their babies grow in a pouch on the mom's belly!</p>
+
+                <div class="content-break-grid">
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_joey.jpg" alt="Mother possum carrying a joey" class="img-joey">
+                        <figcaption class="content-break-caption">After the pouch stage, joeys ride on mom's back.</figcaption>
+                    </figure>
+                </div>
 
                 <div class="info-box">
                     <h4>🦘 How Long Does the Baby Grow Inside Mom?</h4>
@@ -837,6 +897,17 @@
         <div id="habitat" class="page">
             <div class="content-section">
                 <h2>Where Do Possums Live?</h2>
+
+                <div class="content-break-grid">
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_termite_nest.jpg" alt="Possum resting in a tree hollow">
+                        <figcaption class="content-break-caption">Tree hollows are one of their safest homes.</figcaption>
+                    </figure>
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_tree.jpg" alt="Possum in an urban environment">
+                        <figcaption class="content-break-caption">They can also adapt to neighborhoods and cities.</figcaption>
+                    </figure>
+                </div>
 
                 <h3>Where in the World?</h3>
 
@@ -1020,6 +1091,17 @@
             <div class="content-section">
                 <h2>The Possum's Body</h2>
 
+                <div class="content-break-grid">
+                    <figure class="content-break-card">
+                        <img src="images/possum5.jpg" alt="Possum showing its bushy tail" class="img-anatomy">
+                        <figcaption class="content-break-caption">Their tail helps with grip and balance.</figcaption>
+                    </figure>
+                    <figure class="content-break-card">
+                        <img src="images/possum6.jpg" alt="Possum grooming itself" class="img-anatomy">
+                        <figcaption class="content-break-caption">Healthy fur is maintained through frequent grooming.</figcaption>
+                    </figure>
+                </div>
+
                 <h3>How Big Are They?</h3>
 
                 <h4>📏 Size and Weight</h4>
@@ -1130,6 +1212,21 @@
         <div id="behavior" class="page">
             <div class="content-section">
                 <h2>What Possums Do All Day (and Night!)</h2>
+
+                <div class="content-break-grid">
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_tree.jpg" alt="Possum active at night">
+                        <figcaption class="content-break-caption">Brushtail possums are mostly active at night.</figcaption>
+                    </figure>
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_termite_nest.jpg" alt="Possum moving through city structures">
+                        <figcaption class="content-break-caption">City possums learn routes through roofs and fences.</figcaption>
+                    </figure>
+                    <figure class="content-break-card">
+                        <img src="images/possum_wikimedia_joey.jpg" alt="Possum cleaning fur">
+                        <figcaption class="content-break-caption">Grooming is a big part of daily behavior.</figcaption>
+                    </figure>
+                </div>
 
                 <h3>Night Animals</h3>
 
