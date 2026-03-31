@@ -496,6 +496,49 @@
             .pop-cards { grid-template-columns: 1fr; }
         }
 
+        .misc-fact {
+            display: grid;
+            grid-template-columns: 4rem 1fr;
+            gap: 1.25rem;
+            align-items: start;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .misc-fact:nth-child(2) { border-left-color: var(--accent-color); }
+        .misc-fact:nth-child(3) { border-left-color: #5B8CDB; }
+
+        .misc-fact-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            line-height: 1;
+            padding-top: 0.2rem;
+        }
+
+        .misc-fact h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .misc-fact p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 500px) {
+            .misc-fact {
+                grid-template-columns: 1fr;
+            }
+            .misc-fact-icon {
+                font-size: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -569,6 +612,7 @@
                 <li><button onclick="showPage('anatomy')" class="nav-btn" data-page="anatomy">Body</button></li>
                 <li><button onclick="showPage('behavior')" class="nav-btn" data-page="behavior">Behavior</button></li>
                 <li><button onclick="showPage('popular-culture')" class="nav-btn" data-page="popular-culture">Popular Culture</button></li>
+                <li><button onclick="showPage('misc-facts')" class="nav-btn" data-page="misc-facts">Misc Facts</button></li>
             </ul>
         </nav>
     </header>
@@ -607,6 +651,11 @@
                     <h3>🦘 What They Do</h3>
                     <p>Possums sleep all day and come out at night. Find out what they do after dark!</p>
                     <button class="btn" onclick="showPage('behavior')">Learn More</button>
+                </div>
+                <div class="info-card">
+                    <h3>🤩 Misc Facts</h3>
+                    <p>Did you know possums are immune to snake venom? Check out three wild facts that might surprise you!</p>
+                    <button class="btn" onclick="showPage('misc-facts')">Learn More</button>
                 </div>
             </div>
 
@@ -1481,6 +1530,44 @@
                     <div class="pop-funfact">
                         <div class="pop-funfact-title">🦊 Kylie in Fantastic Mr. Fox is in the wrong country!</div>
                         <p>Kylie the opossum in Fantastic Mr. Fox is a North American opossum, but the story takes place in the English countryside. Opossums don't actually live in England — so Kylie is a fun character who is a little bit in the wrong place! 😄</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MISC FACTS PAGE -->
+        <div id="misc-facts" class="page">
+            <div class="content-section">
+                <h2>Misc Facts</h2>
+                <p>You already know the basics — now here are three super cool possum facts that might surprise you!</p>
+
+                <figure class="inline-photo" style="max-width: 500px; margin: 1.5rem auto;">
+                    <img src="images/misc_facts_possum.jpg" alt="A brushtail possum">
+                    <figcaption>A brushtail possum</figcaption>
+                </figure>
+
+                <div class="misc-fact">
+                    <div class="misc-fact-icon">🐍</div>
+                    <div>
+                        <h3>Snake Bites Don't Hurt Them!</h3>
+                        <p>Australia has lots of very dangerous snakes. But possums are not scared — because snake bites barely hurt them at all! Something in their blood stops the poison from working. A bite that would make a dog very sick just doesn't bother a possum. Scientists are now studying possum blood to help make better medicine for people who get bitten by snakes. Pretty cool, right?</p>
+                    </div>
+                </div>
+
+                <div class="misc-fact">
+                    <div class="misc-fact-icon">💤</div>
+                    <div>
+                        <h3>They Can't Help "Playing Dead"!</h3>
+                        <p>You might have heard the saying "playing possum" — it means pretending to be dead. But possums don't actually choose to do it! When a possum gets really, really scared, its body just freezes all on its own — a bit like how you might jump when something startles you. The possum goes stiff, its eyes go blank, and it can stay like that for up to two whole hours! Animals that want to eat it usually get bored and walk away. The possum can't even stop it from happening!</p>
+                    </div>
+                </div>
+
+                <div class="misc-fact">
+                    <div class="misc-fact-icon">🪸</div>
+                    <div>
+                        <h3>Their Tail Stores Food Energy!</h3>
+                        <p>A possum's fluffy tail isn't just for holding on to branches — the thick part at the bottom stores extra energy, like fat, for when food is hard to find. Think of it like a lunchbox packed inside their tail! When there isn't much food around, the possum's body uses up the energy stored there. You can even tell if a possum has been eating well just by looking at its tail — a big chunky base means a happy, healthy possum!</p>
                     </div>
                 </div>
 
