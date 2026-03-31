@@ -47,12 +47,18 @@
             z-index: 1000;
         }
 
-        .logo {
+        .header-bar {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
             gap: 1rem;
-            padding: 0.5rem 0;
         }
 
         .logo h1 {
@@ -61,6 +67,31 @@
             font-weight: 800;
             letter-spacing: 0.3px;
         }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: absolute;
+            right: 1rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
         nav ul {
             display: flex;
@@ -587,33 +618,64 @@
                 grid-template-columns: 1fr;
             }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
             main {
                 padding: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 0.5rem 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            nav.open ul {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li button {
+                width: 100%;
+                text-align: left;
+                padding: 0.85rem 1.5rem;
+                border-radius: 0;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <svg width="50" height="50" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="30" cy="30" r="28" fill="#3C8D40" stroke="#A9D96C" stroke-width="2"/>
-                <ellipse cx="30" cy="32" rx="10" ry="12" fill="#FFFBEA"/>
-                <circle cx="30" cy="20" r="8" fill="#FFFBEA"/>
-                <ellipse cx="25" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
-                <ellipse cx="35" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
-                <circle cx="27" cy="20" r="1.5" fill="#2C1810"/>
-                <circle cx="33" cy="20" r="1.5" fill="#2C1810"/>
-                <circle cx="30" cy="23" r="1" fill="#2C1810"/>
-            </svg>
-            <h1>Australian Brushtail Possum</h1>
+        <div class="header-bar">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="28" fill="#3C8D40" stroke="#A9D96C" stroke-width="2"/>
+                    <ellipse cx="30" cy="32" rx="10" ry="12" fill="#FFFBEA"/>
+                    <circle cx="30" cy="20" r="8" fill="#FFFBEA"/>
+                    <ellipse cx="25" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
+                    <ellipse cx="35" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
+                    <circle cx="27" cy="20" r="1.5" fill="#2C1810"/>
+                    <circle cx="33" cy="20" r="1.5" fill="#2C1810"/>
+                    <circle cx="30" cy="23" r="1" fill="#2C1810"/>
+                </svg>
+                <h1>Australian Brushtail Possum</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <nav>
+        <nav id="main-nav">
             <ul>
                 <li><button onclick="showPage('home')" class="nav-btn active" data-page="home">Home</button></li>
                 <li><button onclick="showPage('gallery')" class="nav-btn" data-page="gallery">Gallery</button></li>
@@ -627,6 +689,7 @@
             </ul>
         </nav>
     </header>
+
 
     <main>
         <!-- HOME PAGE -->
@@ -1631,9 +1694,22 @@
                 window.location.hash = pageToShow;
             }
 
+            // Close mobile menu
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('main-nav');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('open');
+
             // Scroll to top
             window.scrollTo(0, 0);
         }
+
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const isOpen = this.classList.toggle('open');
+            this.setAttribute('aria-expanded', isOpen);
+            document.getElementById('main-nav').classList.toggle('open');
+        });
 
         window.addEventListener('hashchange', () => {
             const pageIdFromHash = window.location.hash.replace('#', '');
