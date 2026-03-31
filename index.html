@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australian Brushtail Possum - Interactive Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,19 +15,26 @@
         }
 
         :root {
-            --primary-color: #2C5F2D;
-            --secondary-color: #97BC62;
-            --accent-color: #FF6B35;
-            --text-color: #333;
-            --light-bg: #F5F5DC;
+            --primary-color: #3C8D40;
+            --secondary-color: #A9D96C;
+            --accent-color: #FF7A45;
+            --text-color: #2F3B2F;
+            --light-bg: #FFFBEA;
             --white: #FFFFFF;
+            --page-gradient-top: #f8f8e8;
+            --page-gradient-bottom: #eef8df;
+            --fun-blue: #7CC8FF;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--light-bg);
+            background:
+                radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.6) 0 18px, transparent 19px),
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.45) 0 20px, transparent 21px),
+                linear-gradient(180deg, var(--page-gradient-top), var(--page-gradient-bottom));
+            background-attachment: fixed;
         }
 
         header {
@@ -52,8 +62,10 @@
         }
 
         .logo h1 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 800;
+            letter-spacing: 0.3px;
         }
 
         .hamburger {
@@ -91,20 +103,22 @@
         }
 
         nav ul li button {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.08);
             color: var(--white);
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            border-radius: 999px;
             transition: all 0.3s ease;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 0.95rem;
         }
 
         nav ul li button:hover,
         nav ul li button.active {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.28);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         main {
@@ -127,21 +141,24 @@
             gap: 3rem;
             align-items: center;
             margin-bottom: 3rem;
-            background: var(--white);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff2 100%);
             padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 28px rgba(22, 66, 23, 0.12);
         }
 
         .hero-content h2 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
+            line-height: 1.1;
         }
 
         .hero-content p {
             font-size: 1.2rem;
             line-height: 1.8;
+            color: #35523a;
         }
 
         .info-grid {
@@ -153,56 +170,69 @@
         }
 
         .info-card {
-            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfff5 100%);
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 18px;
+            border: 2px solid #dff1cb;
+            box-shadow: 0 6px 18px rgba(54, 107, 55, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             text-align: center;
         }
 
         .info-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 14px 24px rgba(54, 107, 55, 0.2);
         }
 
         .info-card h3 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
+        .info-card p {
+            flex-grow: 1;
+        }
+
         .info-card .btn {
-            margin-top: 1rem;
+            margin-top: auto;
+            align-self: center;
         }
 
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, #ff8b5f, var(--accent-color));
             color: #FFFFFF;
             text-decoration: none;
             border: none;
-            border-radius: 5px;
+            border-radius: 999px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            font-weight: 700;
+            box-shadow: 0 6px 14px rgba(229, 90, 43, 0.25);
         }
 
         .btn:hover {
-            background-color: #E55A2B;
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #ffab7f, #ff7a45);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 18px rgba(229, 90, 43, 0.32);
             color: #FFFFFF;
         }
 
         .content-section {
-            background: var(--white);
+            background: linear-gradient(180deg, #ffffff 0%, #fcfff8 100%);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 16px;
             margin-bottom: 2rem;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 22px rgba(22, 66, 23, 0.11);
         }
 
         .content-section h2 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1.5rem;
@@ -211,6 +241,7 @@
         }
 
         .content-section h3 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-top: 2rem;
@@ -218,6 +249,8 @@
         }
 
         .content-section h4 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
+            font-size: 1.25rem;
             color: var(--primary-color);
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
@@ -235,38 +268,67 @@
 
         .content-section li {
             margin-bottom: 0.5rem;
+            padding-left: 0.1rem;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             margin: 1.5rem 0;
-            background: var(--white);
+            background: #ffffff;
+            border: 2px solid #d9efc3;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(44, 95, 45, 0.1);
         }
 
         table th {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #62b666, var(--primary-color));
             color: var(--white);
             padding: 1rem;
             text-align: left;
-            font-weight: bold;
+            font-weight: 800;
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
+            letter-spacing: 0.2px;
         }
 
         table td {
             padding: 1rem;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e8f2d9;
         }
 
-        table tr:hover {
-            background: var(--light-bg);
+        table tr:nth-child(even) td {
+            background: #f8fdea;
+        }
+
+        table tr:hover td {
+            background: #eef8d8;
         }
 
         .info-box {
-            background: var(--light-bg);
-            border-left: 5px solid var(--accent-color);
+            background: linear-gradient(135deg, #fffef4 0%, #fff5d9 100%);
+            border: 2px solid #ffd58a;
             padding: 1.5rem;
             margin: 2rem 0;
-            border-radius: 5px;
+            border-radius: 14px;
+            box-shadow: 0 8px 18px rgba(255, 170, 73, 0.2);
+            position: relative;
+        }
+
+        .info-box::before {
+            content: "⭐";
+            position: absolute;
+            top: -12px;
+            left: -10px;
+            font-size: 1.25rem;
+            background: #fff8dc;
+            border: 2px solid #ffd58a;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
         }
 
         .info-box h4 {
@@ -339,9 +401,16 @@
 
         .gallery-item {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e2f0cc;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px) rotate(-0.2deg);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.16);
         }
 
         .gallery-item-image {
@@ -375,12 +444,13 @@
         .quick-facts {
             background: var(--white);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 16px;
             margin-bottom: 2rem;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 22px rgba(22, 66, 23, 0.11);
         }
 
         .quick-facts h2 {
+            font-family: 'Baloo 2', 'Nunito', sans-serif;
             color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 1rem;
@@ -397,8 +467,9 @@
             padding: 0.75rem;
             border-left: 4px solid var(--secondary-color);
             margin-bottom: 0.75rem;
-            background: var(--light-bg);
-            border-radius: 5px;
+            background: #f7fce9;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(120, 160, 80, 0.12);
         }
 
         /* Content Breakers for long reading sections */
@@ -410,10 +481,11 @@
         }
 
         .content-break-card {
-            background: var(--light-bg);
-            border-radius: 10px;
+            background: #fffdf3;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border: 2px solid #f4e6b9;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.09);
         }
 
         .content-break-card img {
@@ -441,14 +513,17 @@
             padding: 0.75rem 1rem;
             font-size: 0.95rem;
             color: #444;
+            font-weight: 700;
         }
 
         footer {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #3c8d40, #5aa95e);
             color: var(--white);
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
         }
 
         /* Popular Culture Page - Kid-Friendly Styles */
@@ -583,11 +658,11 @@
         <div class="header-bar">
             <div class="logo">
                 <svg width="50" height="50" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="28" fill="#2C5F2D" stroke="#97BC62" stroke-width="2"/>
-                    <ellipse cx="30" cy="32" rx="10" ry="12" fill="#F5F5DC"/>
-                    <circle cx="30" cy="20" r="8" fill="#F5F5DC"/>
-                    <ellipse cx="25" cy="14" rx="3" ry="4" fill="#F5F5DC"/>
-                    <ellipse cx="35" cy="14" rx="3" ry="4" fill="#F5F5DC"/>
+                    <circle cx="30" cy="30" r="28" fill="#3C8D40" stroke="#A9D96C" stroke-width="2"/>
+                    <ellipse cx="30" cy="32" rx="10" ry="12" fill="#FFFBEA"/>
+                    <circle cx="30" cy="20" r="8" fill="#FFFBEA"/>
+                    <ellipse cx="25" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
+                    <ellipse cx="35" cy="14" rx="3" ry="4" fill="#FFFBEA"/>
                     <circle cx="27" cy="20" r="1.5" fill="#2C1810"/>
                     <circle cx="33" cy="20" r="1.5" fill="#2C1810"/>
                     <circle cx="30" cy="23" r="1" fill="#2C1810"/>
@@ -816,7 +891,7 @@
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
                 <h2>Possum in the City</h2>
-                <div style="background: linear-gradient(to bottom, #FF6B35, #1a1a2e); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                <div style="background: linear-gradient(to bottom, #FF7A45, #1a1a2e); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum4.jpg with your photo -->
                     <img src="images/possum4.jpg" alt="Urban Adaptation"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
@@ -848,7 +923,7 @@
             <div class="content-section">
                 <button class="btn" onclick="showPage('gallery')" style="margin-bottom: 2rem;">← Back to Gallery</button>
                 <h2>Getting Clean</h2>
-                <div style="background: #2C5F2D; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                <div style="background: #3C8D40; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
                     <!-- REPLACE: images/possum6.jpg with your photo -->
                     <img src="images/possum6.jpg" alt="Grooming Behavior"
                          style="width: 100%; max-width: 800px; height: auto; margin: 0 auto; display: block; border-radius: 8px;"
